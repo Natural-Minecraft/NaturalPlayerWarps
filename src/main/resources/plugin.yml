@@ -1,0 +1,67 @@
+name: AxPlayerWarps
+version: '${project.version}'
+main: com.artillexstudios.axplayerwarps.AxPlayerWarps
+api-version: '1.20'
+folia-supported: true
+
+permissions:
+  axplayerwarps.open:
+    default: true
+  axplayerwarps.use:
+    default: true
+  axplayerwarps.delete:
+    default: true
+  axplayerwarps.edit:
+    default: true
+  axplayerwarps.info:
+    default: true
+  axplayerwarps.open.other:
+    default: op
+  axplayerwarps.create:
+    default: true
+  axplayerwarps.warps.1:
+    default: true
+  axplayerwarps.delay-bypass:
+    default: op
+  axplayerwarps.admin.help:
+    default: op
+  axplayerwarps.admin.reload:
+    default: op
+  axplayerwarps.admin.delete:
+    default: op
+  axplayerwarps.admin.setowner:
+    default: op
+  axplayerwarps.admin.converter:
+    default: op
+  axplayerwarps.admin.bypass:
+    default: op
+
+softdepend:
+  - PlaceholderAPI
+  - BentoBox
+  - GriefPrevention
+  - HuskClaims
+  - HuskTowns
+  - IridiumSkyBlock
+  - Kingdoms
+  - Lands
+  - LockettePro
+  - PlotSquared
+  - Residence
+  - SaberFactions
+  - SuperiorSkyblock2
+  - Towny
+  - WorldGuard
+  - AxQuestBoard
+  - BeastTokens
+  - CoinsEngine
+  - EcoBits
+  - Kingdoms
+  - PlayerPoints
+  - RivalHarvesterHoes
+  - RoyaleEconomy
+  - SuperMobCoins
+  - TheOnly-MobCoins
+  - TokenManager
+  - UltraEconomy
+  - Vault

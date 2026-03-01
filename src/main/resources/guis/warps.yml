@@ -1,0 +1,149 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axplayerwarps.html
+# ITEM BUILDER: https://docs.artillex-studios.com/item-builder.html
+
+title: "&0&lAxPWarps > &8Warps (%page%/%pages%)"
+# a gui can have 1-6 rows
+rows: 6
+# how many items should be shown on a single page?
+page-size: 45
+# should the gui auto update?
+# in ticks, 20 ticks = 1 second
+# set to -1 to disable auto updater
+auto-update-ticks: -1
+
+# ----- WARP ITEM -----
+
+warp:
+  name: "&#33EEBB&l%name%"
+  lore:
+    - " "
+    - "&#33EEBBDescription:"
+    - "&#444444❙ &f%description%"
+    - " "
+    - "&#33EEBBInformation"
+    - "  &#444444❙ &#BBFFDDOwner: &f%owner%"
+    - "  &#444444❙ &#BBFFDDCreated: &f%created%"
+    - "  &#444444❙ &#BBFFDDLocation: &f%world%, %x%, %y%, %z%"
+    - "  &#444444❙ &#BBFFDDCategory: &f%category%"
+    - " "
+    - "&#33EEBBStatistics"
+    - "  &#444444❙ &#BBFFDDVisits: &f%visitors_unique%"
+    - "  &#444444❙ &#BBFFDDRating: &#FFDD00%rating_stars%"
+    - "  &#444444❙ &#BBFFDDFavorite of: &f%favorites% players"
+    - " "
+    - "&#33EEBBCost of teleporting: &#BBFFDD%price%"
+    - "&#33EEBBAccess: &#BBFFDD%access%"
+    - " "
+    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDTeleport"
+    - "&#33EEBB&lRight Click &#DDDDDD» &#BBFFDDReview & Options"
+
+# ----- ITEMS -----
+
+my-warps:
+  slot: 45
+  # this font is called 'small caps'
+  name: "&#33EEBB&lᴍʏ ᴡᴀʀᴘs"
+  type: ENDER_PEARL
+  lore:
+    - " "
+    - " &fClick here to view/edit/delete"
+    - " &fyour &#33EEBB%my_warps% &fwarps!"
+    - " "
+    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen My Warps"
+  actions:
+    - "[MENU] my-warps"
+    - "[SOUND] ui.button.click|1|1"
+
+sorting:
+  slot: 46
+  material: "GLOWSTONE_DUST"
+  name: "&#33EEBB&lsᴏʀᴛɪɴɢ"
+  lore:
+    - " "
+    - " &#33EEBBCurrently selected:"
+    - "  &#444444❙ &#BBFFDD%sorting_selected%"
+    - " "
+    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDChange Sorting"
+    - "&#33EEBB&lShift + Click &#DDDDDD» &#BBFFDDReset Sorting"
+  actions:
+    - "[SOUND] ui.button.click|1|1"
+
+previous-page:
+  slot: 48
+  material: "ARROW"
+  name: "&#33EEBB&lᴘʀᴇᴠɪᴏᴜs ᴘᴀɢᴇ"
+  lore:
+    - " "
+    - " &fClick here to go back"
+    - " &fto the previous page!"
+    - " "
+    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDPrevious Page"
+  actions:
+    - "[SOUND] ui.button.click|1|1"
+    - "[PAGE] previous"
+
+refresh:
+  slot: 49
+  material: "SUNFLOWER"
+  name: "&#33EEBB&lʀᴇғʀᴇsʜ"
+  lore:
+    - " "
+    - " &fClick here to"
+    - " &frefresh the page!"
+    - " "
+    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDRefresh Page"
+  actions:
+    - "[SOUND] ui.button.click|1|1"
+    - "[REFRESH]"
+
+next-page:
+  slot: 50
+  material: "ARROW"
+  name: "&#33EEBB&lɴᴇxᴛ ᴘᴀɢᴇ"
+  lore:
+    - " "
+    - " &fClick here to go"
+    - " &fto the next page!"
+    - " "
+    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDNext Page"
+  actions:
+    - "[SOUND] ui.button.click|1|1"
+    - "[PAGE] next"
+
+category:
+  slot: 52
+  material: "HOPPER"
+  name: "&#33EEBB&lᴄᴀᴛᴇɢᴏʀʏ"
+  lore:
+    - " "
+    - " &#33EEBBCurrently selected:"
+    - "  &#444444❙ &#BBFFDD%category_selected%"
+    - " "
+    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDChange Category"
+    - "&#33EEBB&lShift + Click &#DDDDDD» &#BBFFDDDelete Category Filter"
+  actions:
+    - "[SOUND] ui.button.click|1|1"
+
+search:
+  slot: 53
+  material: "SPYGLASS"
+  name: "&#33EEBB&lsᴇᴀʀᴄʜ ᴡᴀʀᴘs"
+  lore:
+    - " "
+    - " &fClick here to search for warps by"
+    - " &ftheir name or by their owner's name!"
+    - " "
+    - "&#33EEBBCurrent search: &#BBFFDD%search%"
+    - " "
+    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDSearch"
+    - "&#33EEBB&lShift + Click &#DDDDDD» &#BBFFDDClear Search"
+  actions:
+    - "[SOUND] ui.button.click|1|1"
+
+#decoration-example:
+#  slot: 10
+#  type: STONE
+#  name: "&eDecoration!"
+#  actions:
+#    - "[MENU] close"
+#    - "[MESSAGE] &#FF0000Message"

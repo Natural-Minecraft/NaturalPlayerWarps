@@ -1,0 +1,169 @@
+# DOCUMENTATION: https://docs.artillex-studios.com/axplayerwarps.html
+
+help:
+  - " "
+  - "<gradient:#33EEBB:#3388BB><b>AxPlayerWarps</b></gradient> <#33CCBB>Help"
+  - " <#33CCBB>➤ <white>/axpw [open] [player] <#DDDDDD>| <#BBFFDD>Open warp menu"
+  - " <#33CCBB>➤ <white>/axpw create <name> <#DDDDDD>| <#BBFFDD>Create warp"
+  - " <#33CCBB>➤ <white>/axpw delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
+  - " <#33CCBB>➤ <white>/axpw edit <warp> <#DDDDDD>| <#BBFFDD>Open warp editor"
+  - " <#33CCBB>➤ <white>/axpw warp <warp> <#DDDDDD>| <#BBFFDD>Teleport to warp"
+  - " <#33CCBB>➤ <white>/axpw info <warp> <#DDDDDD>| <#BBFFDD>Warp information"
+  - " <#33CCBB>➤ <white>/axpw set <warp> <#DDDDDD>| <#BBFFDD>Update warp location"
+  - " <#33CCBB>➤ <white>/axpw settings <warp> <#DDDDDD>| <#BBFFDD>Open warp settings"
+  - " <#33CCBB>➤ <#44CCBB>/axpwadmin <#DDDDDD>| <#BBFFDD>Admin commands"
+  - " "
+
+admin-help:
+  - " "
+  - "<gradient:#33EEBB:#3388BB><b>AxPlayerWarps</b></gradient> <#33CCBB>Admin Help"
+  - " <#33CCBB>➤ <white>/axpwadmin reload <#DDDDDD>| <#BBFFDD>Reload plugin"
+  - " <#33CCBB>➤ <white>/axpwadmin delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
+  - " <#33CCBB>➤ <white>/axpwadmin setowner <warp> <player> <#DDDDDD>| <#BBFFDD>Set owner of warp"
+  - " <#33CCBB>➤ <white>/axpwadmin converter <#DDDDDD>| <#BBFFDD>Convert data from another plugin"
+  - " "
+
+access:
+  private: "&#EE0000Private"
+  whitelisted: "&#EEEE00Whitelisted"
+  public: "&#00EE00Public"
+
+placeholders:
+  no-category: "---"
+  free: "Free"
+  no-rating: "No Rating"
+  star:
+    bright: "&#FFFF00⭐"
+    dark: "&#DDDDDD⭐"
+  no-search: "---"
+  warp-not-found: "Warp not found"
+
+info:
+  - "&#BBFFDD===== &#33EEBB&l%name% &#BBFFDD====="
+  - " "
+  - " &#33EEBBDescription:"
+  - " &#444444❙ &f%description%"
+  - " "
+  - " &#33EEBBInformation"
+  - "   &#444444❙ &#BBFFDDOwner: &f%owner%"
+  - "   &#444444❙ &#BBFFDDCreated: &f%created%"
+  - "   &#444444❙ &#BBFFDDLocation: &f%world%, %x%, %y%, %z%"
+  - "   &#444444❙ &#BBFFDDCategory: &f%category%"
+  - " "
+  - " &#33EEBBStatistics"
+  - "   &#444444❙ &#BBFFDDVisits: &f%visitors_unique%"
+  - "   &#444444❙ &#BBFFDDRating: &#FFDD00%rating_stars%"
+  - "   &#444444❙ &#BBFFDDFavorite of: &f%favorites% players"
+  - " "
+  - " &#33EEBBCost of teleporting: &#BBFFDD%price%"
+  - " &#33EEBBAccess: &#BBFFDD%access%"
+  - " "
+  - "&#BBFFDD===== &#33EEBB&l%name% &#BBFFDD====="
+
+create:
+  created: "&#BBFFDDYou have successfully created the &#33EEBB%warp% &#BBFFDDwarp!"
+  confirm: "&#BBFFDDCreating a warp will cost you &#33EEBB%price%&#BBFFDD! If you still want to create the warp, type this command again!"
+
+whitelist:
+  clear: "&#BBFFDDYou have removed all players from the whitelist!"
+  remove: "&#BBFFDDYou have removed &#33EEBB%player% &#BBFFDDfrom the whitelist!"
+  add: "&#BBFFDDYou have added &#33EEBB%player% &#BBFFDDto the whitelist!"
+
+blacklist:
+  clear: "&#BBFFDDYou have removed all players from the blacklist!"
+  remove: "&#BBFFDDYou have removed &#33EEBB%player% &#BBFFDDfrom the blacklist!"
+  add: "&#BBFFDDYou have added &#33EEBB%player% &#BBFFDDto the blacklist!"
+
+search:
+  show: "&#BBFFDDShowing search results for &#33EEBB%search%&#BBFFDD!"
+  reset: "&#BBFFDDDisabled search!"
+
+rate:
+  add: "&#BBFFDDYou have added a &#33EEBB%rating% &#BBFFDDstar review to this warp!"
+  remove: "&#BBFFDDYou have removed your rating of this warp!"
+
+favorite:
+  add: "&#BBFFDDYou have added the warp to your favorites!"
+  remove: "&#BBFFDDYou have removed this warp from your favorites!"
+
+editor:
+  update-location: "&#BBFFDDYou have changed the warp's location!"
+  update-name: "&#BBFFDDYou have changed the warp's name!"
+  update-icon: "&#BBFFDDYou have changed the warp's icon!"
+  remove-icon: "&#BBFFDDYou have removed the warp's icon!"
+  transferred: "&#BBFFDDYou have transferred the warp's ownership to &#33EEBB%player%&#BBFFDD!"
+  new-owner: "&#33EEBB%player% &#BBFFDDhas transferred the ownership of the &#33EEBB%warp% &#BBFFDDwarp to you!"
+
+delete:
+  deleted: "&#BBFFDDYou have deleted the &#33EEBB%warp% &#BBFFDDwarp!"
+
+teleport:
+  success: "&#BBFFDDYou have successfully teleported to the &#33EEBB%warp% &#BBFFDDwarp!"
+  in: "&#BBFFDDYou will be teleported in &#33EEBB%seconds% &#BBFFDDseconds! Do not move!"
+
+confirm:
+  unsafe: "&#BBFFDDThe &#33EEBB%warp% &#BBFFDDwarp is &#FF0000&nnot safe&#BBFFDD! Warp again to confirm if you still want to teleport!"
+  paid: "&#BBFFDDTeleporting to the &#33EEBB%warp% &#BBFFDDwarp is going to cost &#33EEBB%price%&#BBFFDD! Warp again to confirm if you still want to teleport!"
+
+money:
+  take: "&#33EEBB%price% &#BBFFDDwas removed from your balance!"
+  got: "&#BBFFDDYou have withdrawn &#33EEBB%price% &#BBFFDDfrom the warp's bank!"
+
+admin:
+  deleted: "&#FF4444You have deleted the &#FF0000%warp% &#FF4444warp!"
+  setowner: "&#FF4444You have transferred the &#FF0000%warp% &#FF4444warp to &#FF0000%player%&#FF4444!"
+
+errors:
+  disallowed-name-space: "&#FF4444The given warp name cannot contain spaces!"
+  disallowed-name-length: "&#FF4444The length of the given warp name is too short or too long!"
+  disallowed-name-blacklisted: "&#FF4444The given warp name is disallowed!"
+  blacklist-self: "&#FF4444You can't blacklist yourself!"
+  whitelist-self: "&#FF4444You can't whitelist yourself!"
+  player-not-found: "&#FF4444This player has never played on the server!"
+  not-a-number: "&#FF4444The given value is not a valid number!"
+  must-be-positive: "&#FF4444The given value is not a positive number!"
+  invalid-name: "&#FF4444The given name is not valid."
+  name-exists: "&#FF4444A warp with this name already exists."
+  max-lines: "&#FF4444You can not add more lines to the warp's description!"
+  max-length: "&#FF4444The length of warp description lines can't be more than %length% characters!"
+  not-enough-balance: "&#FF4444You do not have enough money to teleport to this warp!"
+  create-not-enough-currency: "&#FF4444You need to have &#FF0000%price% &#FF4444to create a warp!"
+  cannot-create-here: "&#FF4444You can't create a warp here, because it is in a protected area."
+  disallowed-world: "&#FF4444You can't create warps in this world."
+  blacklisted: "&#FF4444You can not teleport to the &#FF0000%warp% &#FF4444warp, because you are blacklisted!"
+  whitelisted: "&#FF4444You can not teleport to the &#FF0000%warp% &#FF4444warp, because it is whitelisted and you are not on the whitelist!"
+  private: "&#FF4444The &#FF0000%warp% &#FF4444is currently set to private, only the owner can teleport to it!"
+  invalid-world: "&#FF4444Teleport failed! This warp is in a world that does not exist anymore!"
+  warp-changed: "&#FF4444Teleport failed! The warp's owner has modified the settings while you were teleporting! Please try again."
+  moved: "&#FF4444You have moved, so the teleport was cancelled!"
+  not-found: "&#FF4444Warp with name &#FF0000%warp% &#FF4444not found!"
+  limit-reached: "&#FF4444You have reached the warp limit, you can not create any more warps! &#FF4444(&#FF0000%current%&#FF4444/&#EE0000%limit%&#FF4444)"
+  nothing-withdrawable: "&#FF4444There is no money to be withdrawn!"
+  not-your-warp: "&#FF4444This is not your warp!"
+
+time:
+  second: "s"
+  minute: "m"
+  hour: "h"
+  day: "d"
+
+converting: "&#33FF33Started converter, check the console for more information!"
+
+reload:
+  success: "&#33FF33Plugin successfully reloaded!"
+  failed: "&#FF3333Failed to reload the plugin! Something is wrong in the &f%file%&#FF3333 file, look in the console or use a yaml validator to fix the errors!"
+
+commands:
+  invalid-value: "&#FF0000Invalid parameter: &#BB0000%value%"
+  invalid-command: "&#FF0000Invalid command or subcommand!"
+  missing-argument: "&#FF0000Missing argument! You must specify a value for &#BB0000%value%&#FF0000."
+  no-permission: "&#FF0000You don't have permission to access this command!"
+  out-of-range: "&#FF0000The &#BB0000%number% &#FF0000must be between &#BB0000%min% &#FF0000and &#BB0000%max%&#FF0000!"
+  player-only: "&#FF0000You must be a player to use this command!"
+  invalid-player: "&#FF0000The player &#BB0000%player% &#FF0000can not be found!"
+  invalid-selector: "&#FF0000You can not use this selector in this command!"
+
+update-notifier: "&#88CCFFThere is a new version of AxPlayerWarps available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
+
+# do not change this
+version: 6
