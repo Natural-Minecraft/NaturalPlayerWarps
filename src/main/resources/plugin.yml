@@ -1,39 +1,39 @@
-name: AxPlayerWarps
+name: NaturalPlayerWarps
 version: '${project.version}'
-main: com.artillexstudios.axplayerwarps.AxPlayerWarps
+main: id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps
 api-version: '1.20'
 folia-supported: true
 
 permissions:
-  axplayerwarps.open:
+  naturalplayerwarps.open:
     default: true
-  axplayerwarps.use:
+  naturalplayerwarps.use:
     default: true
-  axplayerwarps.delete:
+  naturalplayerwarps.delete:
     default: true
-  axplayerwarps.edit:
+  naturalplayerwarps.edit:
     default: true
-  axplayerwarps.info:
+  naturalplayerwarps.info:
     default: true
-  axplayerwarps.open.other:
+  naturalplayerwarps.open.other:
     default: op
-  axplayerwarps.create:
+  naturalplayerwarps.create:
     default: true
-  axplayerwarps.warps.1:
+  naturalplayerwarps.warps.1:
     default: true
-  axplayerwarps.delay-bypass:
+  naturalplayerwarps.delay-bypass:
     default: op
-  axplayerwarps.admin.help:
+  naturalplayerwarps.admin.help:
     default: op
-  axplayerwarps.admin.reload:
+  naturalplayerwarps.admin.reload:
     default: op
-  axplayerwarps.admin.delete:
+  naturalplayerwarps.admin.delete:
     default: op
-  axplayerwarps.admin.setowner:
+  naturalplayerwarps.admin.setowner:
     default: op
-  axplayerwarps.admin.converter:
+  naturalplayerwarps.admin.converter:
     default: op
-  axplayerwarps.admin.bypass:
+  naturalplayerwarps.admin.bypass:
     default: op
 
 softdepend:
