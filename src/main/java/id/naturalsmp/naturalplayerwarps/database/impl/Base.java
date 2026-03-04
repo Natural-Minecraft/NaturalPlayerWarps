@@ -1,18 +1,18 @@
-package com.artillexstudios.axplayerwarps.database.impl;
+package id.naturalsmp.naturalplayerwarps.database.impl;
 
 import com.artillexstudios.axapi.utils.Pair;
-import com.artillexstudios.axplayerwarps.category.Category;
-import com.artillexstudios.axplayerwarps.category.CategoryManager;
-import com.artillexstudios.axplayerwarps.database.Database;
-import com.artillexstudios.axplayerwarps.enums.Access;
-import com.artillexstudios.axplayerwarps.enums.AccessList;
-import com.artillexstudios.axplayerwarps.hooks.HookManager;
-import com.artillexstudios.axplayerwarps.hooks.currency.CurrencyHook;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
-import com.artillexstudios.axplayerwarps.utils.ThreadUtils;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.category.Category;
+import id.naturalsmp.naturalplayerwarps.category.CategoryManager;
+import id.naturalsmp.naturalplayerwarps.database.Database;
+import id.naturalsmp.naturalplayerwarps.enums.Access;
+import id.naturalsmp.naturalplayerwarps.enums.AccessList;
+import id.naturalsmp.naturalplayerwarps.hooks.HookManager;
+import id.naturalsmp.naturalplayerwarps.hooks.currency.CurrencyHook;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.utils.ThreadUtils;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 import com.google.common.collect.HashBiMap;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -47,7 +47,7 @@ public class Base implements Database {
     @Override
     public void setup() {
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_players (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_players (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	uuid VARCHAR(36) NOT NULL,
                 	name VARCHAR(128) NOT NULL,
@@ -57,7 +57,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_currencies (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_currencies (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	currency VARCHAR(512) NOT NULL,
                 	PRIMARY KEY (id),
@@ -66,7 +66,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_worlds (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_worlds (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	world VARCHAR(512) NOT NULL,
                 	PRIMARY KEY (id),
@@ -75,7 +75,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_warps (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_warps (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	owner_id INT NOT NULL,
                 	world_id INT NOT NULL,
@@ -98,7 +98,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_visits (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_visits (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	visitor_id INT NOT NULL,
                 	warp_id INT,
@@ -108,7 +108,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_ratings (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_ratings (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	reviewer_id INT NOT NULL,
                 	warp_id INT NOT NULL,
@@ -119,7 +119,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_categories (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_categories (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	category VARCHAR(512) NOT NULL,
                 	PRIMARY KEY (id),
@@ -128,7 +128,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_materials (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_materials (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	material VARCHAR(512) NOT NULL,
                 	PRIMARY KEY (id),
@@ -137,7 +137,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_favorites (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_favorites (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	player_id INT NOT NULL,
                 	warp_id INT NOT NULL,
@@ -147,7 +147,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_whitelisted (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_whitelisted (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	player_id INT NOT NULL,
                 	warp_id INT NOT NULL,
@@ -157,7 +157,7 @@ public class Base implements Database {
         """);
 
         execute("""
-                CREATE TABLE IF NOT EXISTS axplayerwarps_blacklisted (
+                CREATE TABLE IF NOT EXISTS NaturalPlayerWarps_blacklisted (
                 	id INT NOT NULL AUTO_INCREMENT,
                 	player_id INT NOT NULL,
                 	warp_id INT NOT NULL,
@@ -171,15 +171,15 @@ public class Base implements Database {
     public void loadOrUpdate(Player player) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT name FROM axplayerwarps_players WHERE uuid = ?",
+                "SELECT name FROM NaturalPlayerWarps_players WHERE uuid = ?",
                 player.getUniqueId().toString())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     if (rs.getString("name").equals(player.getName())) return;
-                    execute("UPDATE axplayerwarps_players SET name = ? WHERE uuid = ?", player.getName(), player.getUniqueId().toString());
+                    execute("UPDATE NaturalPlayerWarps_players SET name = ? WHERE uuid = ?", player.getName(), player.getUniqueId().toString());
                 } else {
-                    insert("INSERT INTO axplayerwarps_players (uuid, name) VALUES (?, ?)", player.getUniqueId().toString(), player.getName());
+                    insert("INSERT INTO NaturalPlayerWarps_players (uuid, name) VALUES (?, ?)", player.getUniqueId().toString(), player.getName());
                 }
             }
         } catch (SQLException ex) {
@@ -226,14 +226,14 @@ public class Base implements Database {
     public int getPlayerId(UUID uuid) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT id FROM axplayerwarps_players WHERE uuid = ?",
+                "SELECT id FROM NaturalPlayerWarps_players WHERE uuid = ?",
                 uuid.toString())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) return rs.getInt(1);
                 else {
                     OfflinePlayer pl = Bukkit.getOfflinePlayer(uuid);
-                    return insert("INSERT INTO axplayerwarps_players (uuid, name) VALUES (?, ?)", uuid.toString(), pl.getName());
+                    return insert("INSERT INTO NaturalPlayerWarps_players (uuid, name) VALUES (?, ?)", uuid.toString(), pl.getName());
                 }
             }
         } catch (SQLException ex) {
@@ -250,7 +250,7 @@ public class Base implements Database {
         if (pl.getName() != null) return pl.getName();
 
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT name FROM axplayerwarps_players WHERE uuid = ?",
+                "SELECT name FROM NaturalPlayerWarps_players WHERE uuid = ?",
                 uuid.toString())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -271,7 +271,7 @@ public class Base implements Database {
     public UUID getUUIDFromName(String name) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT uuid FROM axplayerwarps_players WHERE UPPER(name) = UPPER(?)",
+                "SELECT uuid FROM NaturalPlayerWarps_players WHERE UPPER(name) = UPPER(?)",
                 name)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -287,7 +287,7 @@ public class Base implements Database {
     public UUID getUUIDFromId(int id) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT uuid FROM axplayerwarps_players WHERE id = ?",
+                "SELECT uuid FROM NaturalPlayerWarps_players WHERE id = ?",
                 id)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -303,7 +303,7 @@ public class Base implements Database {
     public Pair<UUID, String> getUUIDAndNameFromId(int id) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT uuid, name FROM axplayerwarps_players WHERE id = ?",
+                "SELECT uuid, name FROM NaturalPlayerWarps_players WHERE id = ?",
                 id)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -323,13 +323,13 @@ public class Base implements Database {
     public int getWorldId(World world) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT id FROM axplayerwarps_worlds WHERE world = ?",
+                "SELECT id FROM NaturalPlayerWarps_worlds WHERE world = ?",
                 world.getName())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) return rs.getInt(1);
                 else {
-                    return insert("INSERT INTO axplayerwarps_worlds (world) VALUES (?)", world.getName());
+                    return insert("INSERT INTO NaturalPlayerWarps_worlds (world) VALUES (?)", world.getName());
                 }
             }
         } catch (SQLException ex) {
@@ -342,7 +342,7 @@ public class Base implements Database {
     public String getWorldFromId(int id) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT world FROM axplayerwarps_worlds WHERE id = ?",
+                "SELECT world FROM NaturalPlayerWarps_worlds WHERE id = ?",
                 id)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -358,13 +358,13 @@ public class Base implements Database {
     public int getCategoryId(String category) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT id FROM axplayerwarps_categories WHERE category = ?",
+                "SELECT id FROM NaturalPlayerWarps_categories WHERE category = ?",
                 category)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) return rs.getInt(1);
                 else {
-                    return insert("INSERT INTO axplayerwarps_categories (category) VALUES (?)", category);
+                    return insert("INSERT INTO NaturalPlayerWarps_categories (category) VALUES (?)", category);
                 }
             }
         } catch (SQLException ex) {
@@ -377,7 +377,7 @@ public class Base implements Database {
     public Category getCategoryFromId(int id) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT category FROM axplayerwarps_categories WHERE id = ?",
+                "SELECT category FROM NaturalPlayerWarps_categories WHERE id = ?",
                 id)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -393,13 +393,13 @@ public class Base implements Database {
     public int getCurrencyId(String currency) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT id FROM axplayerwarps_currencies WHERE currency = ?",
+                "SELECT id FROM NaturalPlayerWarps_currencies WHERE currency = ?",
                 currency)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) return rs.getInt(1);
                 else {
-                    return insert("INSERT INTO axplayerwarps_currencies (currency) VALUES (?)", currency);
+                    return insert("INSERT INTO NaturalPlayerWarps_currencies (currency) VALUES (?)", currency);
                 }
             }
         } catch (SQLException ex) {
@@ -412,7 +412,7 @@ public class Base implements Database {
     public CurrencyHook getCurrencyFromId(int id) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT currency FROM axplayerwarps_currencies WHERE id = ?",
+                "SELECT currency FROM NaturalPlayerWarps_currencies WHERE id = ?",
                 id)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -434,13 +434,13 @@ public class Base implements Database {
     public int getMaterialId(String material) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT id FROM axplayerwarps_materials WHERE material = ?",
+                "SELECT id FROM NaturalPlayerWarps_materials WHERE material = ?",
                 material)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) return rs.getInt(1);
                 else {
-                    return insert("INSERT INTO axplayerwarps_materials (material) VALUES (?)", material);
+                    return insert("INSERT INTO NaturalPlayerWarps_materials (material) VALUES (?)", material);
                 }
             }
         } catch (SQLException ex) {
@@ -453,7 +453,7 @@ public class Base implements Database {
     public Material getMaterialFromId(int id) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT material FROM axplayerwarps_materials WHERE id = ?",
+                "SELECT material FROM NaturalPlayerWarps_materials WHERE id = ?",
                 id)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -469,7 +469,7 @@ public class Base implements Database {
     public int createWarp(OfflinePlayer player, Location l, String warpName) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         return insert("""
-                INSERT INTO axplayerwarps_warps
+                INSERT INTO NaturalPlayerWarps_warps
                 (owner_id, world_id, x, y, z, yaw, pitch, name, created)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
                 """,
@@ -484,7 +484,7 @@ public class Base implements Database {
     public void updateWarp(Warp warp) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         execute("""
-                UPDATE axplayerwarps_warps SET
+                UPDATE NaturalPlayerWarps_warps SET
                 owner_id = ?,
                 world_id = ?,
                 x = ?,
@@ -527,12 +527,12 @@ public class Base implements Database {
             user.getFavorites().removeIf(w -> w.equals(warp));
         }
 
-        execute("DELETE FROM axplayerwarps_warps WHERE id = ?;", warp.getId());
-        execute("DELETE FROM axplayerwarps_visits WHERE warp_id = ?;", warp.getId());
-        execute("DELETE FROM axplayerwarps_ratings WHERE warp_id = ?;", warp.getId());
-        execute("DELETE FROM axplayerwarps_favorites WHERE warp_id = ?;", warp.getId());
-        execute("DELETE FROM axplayerwarps_whitelisted WHERE warp_id = ?;", warp.getId());
-        execute("DELETE FROM axplayerwarps_blacklisted WHERE warp_id = ?;", warp.getId());
+        execute("DELETE FROM NaturalPlayerWarps_warps WHERE id = ?;", warp.getId());
+        execute("DELETE FROM NaturalPlayerWarps_visits WHERE warp_id = ?;", warp.getId());
+        execute("DELETE FROM NaturalPlayerWarps_ratings WHERE warp_id = ?;", warp.getId());
+        execute("DELETE FROM NaturalPlayerWarps_favorites WHERE warp_id = ?;", warp.getId());
+        execute("DELETE FROM NaturalPlayerWarps_whitelisted WHERE warp_id = ?;", warp.getId());
+        execute("DELETE FROM NaturalPlayerWarps_blacklisted WHERE warp_id = ?;", warp.getId());
 
         WarpManager.getWarps().remove(warp);
     }
@@ -542,7 +542,7 @@ public class Base implements Database {
         removeRating(player, warp);
         warp.getAllRatings().put(player.getUniqueId(), stars);
         ThreadUtils.checkNotMain("This method can only be called async!");
-        execute("INSERT INTO axplayerwarps_ratings (reviewer_id, warp_id, stars, date) VALUES (?, ?, ?, ?);",
+        execute("INSERT INTO NaturalPlayerWarps_ratings (reviewer_id, warp_id, stars, date) VALUES (?, ?, ?, ?);",
                 getPlayerId(player), warp.getId(), stars, System.currentTimeMillis());
     }
 
@@ -550,7 +550,7 @@ public class Base implements Database {
     public void removeRating(Player player, Warp warp) {
         warp.getAllRatings().remove(player.getUniqueId());
         ThreadUtils.checkNotMain("This method can only be called async!");
-        execute("DELETE FROM axplayerwarps_ratings WHERE reviewer_id = ? AND warp_id = ?;",
+        execute("DELETE FROM NaturalPlayerWarps_ratings WHERE reviewer_id = ? AND warp_id = ?;",
                 getPlayerId(player), warp.getId());
     }
 
@@ -559,7 +559,7 @@ public class Base implements Database {
     public Integer getRating(Player player, Warp warp) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT stars FROM axplayerwarps_ratings WHERE reviewer_id = ? AND warp_id = ?;",
+                "SELECT stars FROM NaturalPlayerWarps_ratings WHERE reviewer_id = ? AND warp_id = ?;",
                 getPlayerId(player), warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -575,7 +575,7 @@ public class Base implements Database {
     public Pair<Integer, Float> getRatings(Warp warp) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT count(reviewer_id), avg(stars) FROM axplayerwarps_ratings WHERE warp_id = ?;",
+                "SELECT count(reviewer_id), avg(stars) FROM NaturalPlayerWarps_ratings WHERE warp_id = ?;",
                 warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -592,7 +592,7 @@ public class Base implements Database {
         ThreadUtils.checkNotMain("This method can only be called async!");
         HashMap<UUID, Integer> ratings = new HashMap<>();
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT axplayerwarps_players.uuid, axplayerwarps_ratings.stars FROM axplayerwarps_ratings INNER JOIN axplayerwarps_players ON axplayerwarps_ratings.reviewer_id = axplayerwarps_players.id WHERE axplayerwarps_ratings.warp_id = ?;",
+                "SELECT NaturalPlayerWarps_players.uuid, NaturalPlayerWarps_ratings.stars FROM NaturalPlayerWarps_ratings INNER JOIN NaturalPlayerWarps_players ON NaturalPlayerWarps_ratings.reviewer_id = NaturalPlayerWarps_players.id WHERE NaturalPlayerWarps_ratings.warp_id = ?;",
                 warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -612,7 +612,7 @@ public class Base implements Database {
         Users.get(player).getFavorites().add(warp);
         warp.setFavorites(warp.getFavorites() + 1);
         ThreadUtils.checkNotMain("This method can only be called async!");
-        execute("INSERT INTO axplayerwarps_favorites (player_id, warp_id, date) VALUES (?, ?, ?);",
+        execute("INSERT INTO NaturalPlayerWarps_favorites (player_id, warp_id, date) VALUES (?, ?, ?);",
                 getPlayerId(player), warp.getId(), System.currentTimeMillis());
     }
 
@@ -622,7 +622,7 @@ public class Base implements Database {
             warp.setFavorites(warp.getFavorites() - 1);
         }
         ThreadUtils.checkNotMain("This method can only be called async!");
-        execute("DELETE FROM axplayerwarps_favorites WHERE player_id = ? AND warp_id = ?;",
+        execute("DELETE FROM NaturalPlayerWarps_favorites WHERE player_id = ? AND warp_id = ?;",
                 getPlayerId(player), warp.getId());
     }
 
@@ -633,7 +633,7 @@ public class Base implements Database {
         }
         Users.get(player).getFavorites().clear();
         ThreadUtils.checkNotMain("This method can only be called async!");
-        execute("DELETE FROM axplayerwarps_favorites WHERE player_id = ?;",
+        execute("DELETE FROM NaturalPlayerWarps_favorites WHERE player_id = ?;",
                 getPlayerId(player));
     }
 
@@ -641,7 +641,7 @@ public class Base implements Database {
     public int getFavorites(Warp warp) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT count(*) FROM axplayerwarps_favorites WHERE warp_id = ?;",
+                "SELECT count(*) FROM NaturalPlayerWarps_favorites WHERE warp_id = ?;",
                 warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -657,7 +657,7 @@ public class Base implements Database {
     public int getFavorites(Player player) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT count(*) FROM axplayerwarps_favorites WHERE player_id = ?;",
+                "SELECT count(*) FROM NaturalPlayerWarps_favorites WHERE player_id = ?;",
                 getPlayerId(player))
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -674,7 +674,7 @@ public class Base implements Database {
         ThreadUtils.checkNotMain("This method can only be called async!");
         List<Warp> warps = new ArrayList<>();
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT warp_id FROM axplayerwarps_favorites WHERE player_id = ?;",
+                "SELECT warp_id FROM NaturalPlayerWarps_favorites WHERE player_id = ?;",
                 getPlayerId(player))
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -696,7 +696,7 @@ public class Base implements Database {
         ThreadUtils.checkNotMain("This method can only be called async!");
         List<Warp> warps = new ArrayList<>();
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT DISTINCT warp_id FROM axplayerwarps_visits WHERE visitor_id = ? ORDER BY date DESC;",
+                "SELECT DISTINCT warp_id FROM NaturalPlayerWarps_visits WHERE visitor_id = ? ORDER BY date DESC;",
                 getPlayerId(player))
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -717,7 +717,7 @@ public class Base implements Database {
     public boolean isFavorite(Player player, Warp warp) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT id FROM axplayerwarps_favorites WHERE player_id = ? AND warp_id = ? LIMIT 1;",
+                "SELECT id FROM NaturalPlayerWarps_favorites WHERE player_id = ? AND warp_id = ? LIMIT 1;",
                 getPlayerId(player), warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -734,7 +734,7 @@ public class Base implements Database {
         warp.setVisits(warp.getVisits() + 1);
         warp.getVisitors().add(player.getUniqueId());
         ThreadUtils.checkNotMain("This method can only be called async!");
-        execute("INSERT INTO axplayerwarps_visits (visitor_id, warp_id, date) VALUES (?, ?, ?);",
+        execute("INSERT INTO NaturalPlayerWarps_visits (visitor_id, warp_id, date) VALUES (?, ?, ?);",
                 getPlayerId(player), warp.getId(), System.currentTimeMillis());
     }
 
@@ -742,7 +742,7 @@ public class Base implements Database {
     public int getVisits(Warp warp) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT count(*) FROM axplayerwarps_visits WHERE warp_id = ?;",
+                "SELECT count(*) FROM NaturalPlayerWarps_visits WHERE warp_id = ?;",
                 warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -759,7 +759,7 @@ public class Base implements Database {
         ThreadUtils.checkNotMain("This method can only be called async!");
         HashSet<UUID> visitors = new HashSet<>();
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT DISTINCT axplayerwarps_players.uuid FROM axplayerwarps_visits INNER JOIN axplayerwarps_players ON axplayerwarps_visits.visitor_id = axplayerwarps_players.id WHERE warp_id = ?;",
+                "SELECT DISTINCT NaturalPlayerWarps_players.uuid FROM NaturalPlayerWarps_visits INNER JOIN NaturalPlayerWarps_players ON NaturalPlayerWarps_visits.visitor_id = NaturalPlayerWarps_players.id WHERE warp_id = ?;",
                 warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -777,7 +777,7 @@ public class Base implements Database {
     public int getUniqueVisits(Warp warp) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT count(*) FROM (SELECT DISTINCT visitor_id FROM axplayerwarps_visits WHERE warp_id = ?);",
+                "SELECT count(*) FROM (SELECT DISTINCT visitor_id FROM NaturalPlayerWarps_visits WHERE warp_id = ?);",
                 warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -793,7 +793,7 @@ public class Base implements Database {
     public boolean warpExists(String name) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT id FROM axplayerwarps_warps WHERE UPPER(name) = UPPER(?)",
+                "SELECT id FROM NaturalPlayerWarps_warps WHERE UPPER(name) = UPPER(?)",
                 name)
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -847,7 +847,7 @@ public class Base implements Database {
     public boolean isOnList(Warp warp, AccessList al, OfflinePlayer player) {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT id FROM " + al.getTable() + " WHERE warp_id = ? AND player_id = (SELECT id FROM axplayerwarps_players WHERE uuid = ? LIMIT 1) LIMIT 1",
+                "SELECT id FROM " + al.getTable() + " WHERE warp_id = ? AND player_id = (SELECT id FROM NaturalPlayerWarps_players WHERE uuid = ? LIMIT 1) LIMIT 1",
                 warp.getId(), player.getUniqueId().toString())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -864,7 +864,7 @@ public class Base implements Database {
         ThreadUtils.checkNotMain("This method can only be called async!");
         List<AccessPlayer> list = new ArrayList<>();
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT axplayerwarps_players.uuid, axplayerwarps_players.name, " + al.getTable() + ".date FROM axplayerwarps_players INNER JOIN " + al.getTable() + " ON axplayerwarps_players.id = " + al.getTable() + ".player_id WHERE " + al.getTable() + ".warp_id = ?",
+                "SELECT NaturalPlayerWarps_players.uuid, NaturalPlayerWarps_players.name, " + al.getTable() + ".date FROM NaturalPlayerWarps_players INNER JOIN " + al.getTable() + " ON NaturalPlayerWarps_players.id = " + al.getTable() + ".player_id WHERE " + al.getTable() + ".warp_id = ?",
                 warp.getId())
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
@@ -885,7 +885,7 @@ public class Base implements Database {
     public void loadWarps() {
         ThreadUtils.checkNotMain("This method can only be called async!");
         try (Connection conn = getConnection(); PreparedStatement stmt = createStatement(conn,
-                "SELECT * FROM axplayerwarps_warps;")
+                "SELECT * FROM NaturalPlayerWarps_warps;")
         ) {
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {

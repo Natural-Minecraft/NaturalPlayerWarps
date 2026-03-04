@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.guis;
+package id.naturalsmp.naturalplayerwarps.guis;
 
 import com.artillexstudios.axapi.config.Config;
 import com.artillexstudios.axapi.libs.boostedyaml.settings.dumper.DumperSettings;
@@ -11,10 +11,10 @@ import com.artillexstudios.axapi.utils.ItemBuilder;
 import com.artillexstudios.axapi.utils.StringUtils;
 import com.artillexstudios.axguiframework.GuiFrame;
 import com.artillexstudios.axguiframework.item.AxGuiItem;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
-import com.artillexstudios.axplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
 import com.artillexstudios.gui.guis.Gui;
 import com.artillexstudios.gui.guis.PaginatedGui;
 import net.kyori.adventure.text.Component;
@@ -30,11 +30,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
 
 public class FavoritesGui extends GuiFrame {
-    private static final Config GUI = new Config(new File(AxPlayerWarps.getInstance().getDataFolder(), "guis/favorites.yml"),
-            AxPlayerWarps.getInstance().getResource("guis/favorites.yml"),
+    private static final Config GUI = new Config(new File(NaturalPlayerWarps.getInstance().getDataFolder(), "guis/favorites.yml"),
+            NaturalPlayerWarps.getInstance().getResource("guis/favorites.yml"),
             GeneralSettings.builder().setUseDefaults(false).build(),
             LoaderSettings.builder().build(),
             DumperSettings.DEFAULT,
@@ -82,7 +82,7 @@ public class FavoritesGui extends GuiFrame {
 
     public CompletableFuture<Void> load() {
         final CompletableFuture<Void> future = new CompletableFuture<>();
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             gui.clearPageItems();
             for (Warp warp : user.getFavorites()) {
                 Material icon = warp.getIcon();

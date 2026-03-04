@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.converters;
+package id.naturalsmp.naturalplayerwarps.converters;
 
 public interface ConverterBase {
     void run();

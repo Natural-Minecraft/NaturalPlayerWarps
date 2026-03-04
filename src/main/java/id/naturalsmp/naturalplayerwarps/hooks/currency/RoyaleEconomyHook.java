@@ -1,11 +1,11 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import me.qKing12.RoyaleEconomy.RoyaleEconomy;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CURRENCIES;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CURRENCIES;
 
 public class RoyaleEconomyHook implements CurrencyHook {
 

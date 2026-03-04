@@ -1,12 +1,12 @@
-package com.artillexstudios.axplayerwarps.commands.subcommands;
+package id.naturalsmp.naturalplayerwarps.commands.subcommands;
 
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.converters.ConverterBase;
-import com.artillexstudios.axplayerwarps.converters.PlayerWarpsConverter;
-import com.artillexstudios.axplayerwarps.enums.Converters;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.converters.ConverterBase;
+import id.naturalsmp.naturalplayerwarps.converters.PlayerWarpsConverter;
+import id.naturalsmp.naturalplayerwarps.enums.Converters;
 import org.bukkit.command.CommandSender;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public enum Converter {
     INSTANCE;
@@ -16,6 +16,6 @@ public enum Converter {
             case PLAYER_WARPS -> new PlayerWarpsConverter();
         };
         MESSAGEUTILS.sendLang(sender, "converting");
-        AxPlayerWarps.getThreadedQueue().submit(cv::run);
+        NaturalPlayerWarps.getThreadedQueue().submit(cv::run);
     }
 }

@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import com.artillexstudios.axapi.utils.StringUtils;
 import dev.unnm3d.rediseconomy.api.RedisEconomyAPI;
@@ -23,7 +23,7 @@ public class RedisEconomyHook implements CurrencyHook {
         RedisEconomyAPI api = RedisEconomyAPI.getAPI();
         currency = api.getCurrencyByName(internal);
         if (currency == null) {
-            Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#FF0000[AxPlayerWarps] RedisEconomy currency named &#DD0000" + internal + " &#FF0000not found! Change the currency-name or disable the hook to get rid of this warning!"));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#FF0000[NaturalPlayerWarps] RedisEconomy currency named &#DD0000" + internal + " &#FF0000not found! Change the currency-name or disable the hook to get rid of this warning!"));
         }
     }
 

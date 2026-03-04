@@ -1,6 +1,6 @@
-package com.artillexstudios.axplayerwarps.listeners;
+package id.naturalsmp.naturalplayerwarps.listeners;
 
-import com.artillexstudios.axplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.Users;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

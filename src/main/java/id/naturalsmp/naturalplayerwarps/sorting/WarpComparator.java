@@ -1,6 +1,6 @@
-package com.artillexstudios.axplayerwarps.sorting;
+package id.naturalsmp.naturalplayerwarps.sorting;
 
-import com.artillexstudios.axplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 

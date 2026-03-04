@@ -1,13 +1,13 @@
-package com.artillexstudios.axplayerwarps.commands;
+package id.naturalsmp.naturalplayerwarps.commands;
 
 import com.artillexstudios.axapi.utils.StringUtils;
-import com.artillexstudios.axplayerwarps.commands.annotations.AllWarps;
-import com.artillexstudios.axplayerwarps.commands.annotations.OwnWarps;
-import com.artillexstudios.axplayerwarps.commands.subcommands.Create;
-import com.artillexstudios.axplayerwarps.commands.subcommands.Info;
-import com.artillexstudios.axplayerwarps.commands.subcommands.Open;
-import com.artillexstudios.axplayerwarps.guis.EditWarpGui;
-import com.artillexstudios.axplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.commands.annotations.AllWarps;
+import id.naturalsmp.naturalplayerwarps.commands.annotations.OwnWarps;
+import id.naturalsmp.naturalplayerwarps.commands.subcommands.Create;
+import id.naturalsmp.naturalplayerwarps.commands.subcommands.Info;
+import id.naturalsmp.naturalplayerwarps.commands.subcommands.Open;
+import id.naturalsmp.naturalplayerwarps.guis.EditWarpGui;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -18,14 +18,14 @@ import revxrsal.commands.bukkit.annotation.CommandPermission;
 import revxrsal.commands.exception.CommandErrorException;
 import revxrsal.commands.orphan.OrphanCommand;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.LANG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.LANG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class MainCommand implements OrphanCommand {
 
     @DefaultFor({"~"})
-    @CommandPermission("axplayerwarps.open")
-    public void open(@NotNull CommandSender sender, @Optional @CommandPermission("axplayerwarps.use") Warp warp) {
+    @CommandPermission("NaturalPlayerWarps.open")
+    public void open(@NotNull CommandSender sender, @Optional @CommandPermission("NaturalPlayerWarps.use") Warp warp) {
         if (warp != null) {
             if (!(sender instanceof Player pl)) throw new CommandErrorException("must-be-player");
             warp.teleportPlayer(pl);
@@ -35,7 +35,7 @@ public class MainCommand implements OrphanCommand {
     }
 
     @Subcommand({"help"})
-    @CommandPermission("axplayerwarps.help")
+    @CommandPermission("NaturalPlayerWarps.help")
     public void help(@NotNull CommandSender sender) {
         for (String m : LANG.getStringList("help")) {
             sender.sendMessage(StringUtils.formatToString(m));
@@ -43,25 +43,25 @@ public class MainCommand implements OrphanCommand {
     }
 
     @Subcommand({"open"})
-    @CommandPermission("axplayerwarps.open")
-    public void open2(@NotNull CommandSender sender, @CommandPermission("axplayerwarps.open.other") @Optional Player player) {
+    @CommandPermission("NaturalPlayerWarps.open")
+    public void open2(@NotNull CommandSender sender, @CommandPermission("NaturalPlayerWarps.open.other") @Optional Player player) {
         Open.INSTANCE.execute(sender, player);
     }
 
     @Subcommand({"warp", "go"})
-    @CommandPermission("axplayerwarps.use")
+    @CommandPermission("NaturalPlayerWarps.use")
     public void warp(@NotNull Player sender, @AllWarps Warp warp) {
         warp.teleportPlayer(sender);
     }
 
     @Subcommand({"create", "set"})
-    @CommandPermission("axplayerwarps.create") // @CommandPermission("axplayerwarps.create.other") @Optional OfflinePlayer player
+    @CommandPermission("NaturalPlayerWarps.create") // @CommandPermission("NaturalPlayerWarps.create.other") @Optional OfflinePlayer player
     public void create(@NotNull Player sender, String warpName) {
         Create.INSTANCE.execute(sender, warpName, null);
     }
 
     @Subcommand({"delete"})
-    @CommandPermission("axplayerwarps.delete")
+    @CommandPermission("NaturalPlayerWarps.delete")
     public void delete(@NotNull Player sender, @OwnWarps Warp warp) {
         if (!warp.getOwner().equals(sender.getUniqueId())) {
             MESSAGEUTILS.sendLang(sender, "errors.not-your-warp");
@@ -71,7 +71,7 @@ public class MainCommand implements OrphanCommand {
     }
 
     @Subcommand({"edit", "settings"})
-    @CommandPermission("axplayerwarps.edit")
+    @CommandPermission("NaturalPlayerWarps.edit")
     public void edit(@NotNull Player sender, @OwnWarps Warp warp) {
         if (!warp.getOwner().equals(sender.getUniqueId())) {
             MESSAGEUTILS.sendLang(sender, "errors.not-your-warp");
@@ -81,7 +81,7 @@ public class MainCommand implements OrphanCommand {
     }
 
     @Subcommand({"info"})
-    @CommandPermission("axplayerwarps.info")
+    @CommandPermission("NaturalPlayerWarps.info")
     public void info(@NotNull CommandSender sender, @AllWarps Warp warp) {
         Info.INSTANCE.execute(sender, warp);
     }

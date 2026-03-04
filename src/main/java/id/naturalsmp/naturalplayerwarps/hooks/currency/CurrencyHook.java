@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import org.jetbrains.annotations.NotNull;
 

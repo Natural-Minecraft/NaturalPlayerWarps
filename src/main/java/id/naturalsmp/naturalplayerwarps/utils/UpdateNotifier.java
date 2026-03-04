@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.utils;
+package id.naturalsmp.naturalplayerwarps.utils;
 
 import com.artillexstudios.axapi.AxPlugin;
 import com.artillexstudios.axapi.scheduler.Scheduler;
@@ -16,8 +16,8 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.LANG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.LANG;
 import static java.time.temporal.ChronoUnit.SECONDS;
 
 public class UpdateNotifier implements Listener {

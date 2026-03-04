@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.commands.subcommands;
+package id.naturalsmp.naturalplayerwarps.commands.subcommands;
 
 import com.artillexstudios.axguiframework.actions.impl.ActionMenu;
 import org.bukkit.command.CommandSender;
@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
 import revxrsal.commands.exception.CommandErrorException;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
 
 public enum Open {
     INSTANCE;

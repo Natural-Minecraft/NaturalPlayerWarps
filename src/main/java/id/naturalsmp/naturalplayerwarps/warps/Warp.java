@@ -1,16 +1,16 @@
-package com.artillexstudios.axplayerwarps.warps;
+package id.naturalsmp.naturalplayerwarps.warps;
 
 import com.artillexstudios.axapi.placeholders.PlaceholderHandler;
 import com.artillexstudios.axapi.scheduler.Scheduler;
 import com.artillexstudios.axapi.utils.Cooldown;
 import com.artillexstudios.axapi.utils.PaperUtils;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.category.Category;
-import com.artillexstudios.axplayerwarps.database.impl.Base;
-import com.artillexstudios.axplayerwarps.enums.Access;
-import com.artillexstudios.axplayerwarps.enums.AccessList;
-import com.artillexstudios.axplayerwarps.hooks.currency.CurrencyHook;
-import com.artillexstudios.axplayerwarps.placeholders.WarpPlaceholders;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.category.Category;
+import id.naturalsmp.naturalplayerwarps.database.impl.Base;
+import id.naturalsmp.naturalplayerwarps.enums.Access;
+import id.naturalsmp.naturalplayerwarps.enums.AccessList;
+import id.naturalsmp.naturalplayerwarps.hooks.currency.CurrencyHook;
+import id.naturalsmp.naturalplayerwarps.placeholders.WarpPlaceholders;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -30,8 +30,8 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class Warp {
     private final int id;
@@ -79,13 +79,13 @@ public class Warp {
         this.earnedMoney = earnedMoney;
         this.icon = icon;
 
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
-            favorites = AxPlayerWarps.getDatabase().getFavorites(this);
-            rating = AxPlayerWarps.getDatabase().getAllRatings(this);
-            visits = AxPlayerWarps.getDatabase().getVisits(this);
-            visitors = AxPlayerWarps.getDatabase().getVisitors(this);
-            whitelisted = AxPlayerWarps.getDatabase().getAccessList(this, AccessList.WHITELIST);
-            blacklisted = AxPlayerWarps.getDatabase().getAccessList(this, AccessList.BLACKLIST);
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+            favorites = NaturalPlayerWarps.getDatabase().getFavorites(this);
+            rating = NaturalPlayerWarps.getDatabase().getAllRatings(this);
+            visits = NaturalPlayerWarps.getDatabase().getVisits(this);
+            visitors = NaturalPlayerWarps.getDatabase().getVisitors(this);
+            whitelisted = NaturalPlayerWarps.getDatabase().getAccessList(this, AccessList.WHITELIST);
+            blacklisted = NaturalPlayerWarps.getDatabase().getAccessList(this, AccessList.BLACKLIST);
         });
     }
 
@@ -118,7 +118,7 @@ public class Warp {
     }
 
     public boolean setName(String name) {
-        if (AxPlayerWarps.getDatabase().warpExists(name)) return false;
+        if (NaturalPlayerWarps.getDatabase().warpExists(name)) return false;
         this.name = name;
         return true;
     }
@@ -300,7 +300,7 @@ public class Warp {
     public void teleportPlayer(Player player) {
         validateTeleport(player, false, bool -> {
             if (!bool) return;
-            if (player.hasPermission("axplayerwarps.delay-bypass")) {
+            if (player.hasPermission("NaturalPlayerWarps.delay-bypass")) {
                 completeTeleportPlayer(player);
                 return;
             }
@@ -320,7 +320,7 @@ public class Warp {
             location.setWorld(world);
         }
 
-        if (player.hasPermission("axplayerwarps.admin.bypass")) {
+        if (player.hasPermission("NaturalPlayerWarps.admin.bypass")) {
             response.accept(true);
             return;
         }
@@ -385,7 +385,7 @@ public class Warp {
             if (!isOwner && isPaid()) {
                 currency.takeBalance(player.getUniqueId(), teleportPrice);
                 earnedMoney += teleportPrice;
-                AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().updateWarp(this));
+                NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().updateWarp(this));
                 MESSAGEUTILS.sendLang(player, "money.take", Map.of("%price%",
                         currency.getDisplayName().replace("%price%", WarpPlaceholders.format(teleportPrice))));
             }
@@ -401,17 +401,17 @@ public class Warp {
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), PlaceholderHandler.parse(m.replace("%player%", player.getName()), this, player));
             }
 
-            AxPlayerWarps.getThreadedQueue().submit(() -> {
-                AxPlayerWarps.getDatabase().addVisit(player, this);
+            NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                NaturalPlayerWarps.getDatabase().addVisit(player, this);
             });
         });
     }
 
     public void delete() {
         Player player = Bukkit.getPlayer(owner);
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             MESSAGEUTILS.sendLang(player, "delete.deleted", Map.of("%warp%", getName()));
-            AxPlayerWarps.getDatabase().deleteWarp(this);
+            NaturalPlayerWarps.getDatabase().deleteWarp(this);
         });
     }
 
@@ -426,6 +426,6 @@ public class Warp {
                 currency.getDisplayName()
                         .replace("%price%", WarpPlaceholders.format(earnedMoney))));
         earnedMoney = 0;
-        AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().updateWarp(this));
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().updateWarp(this));
     }
 }

@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.input;
+package id.naturalsmp.naturalplayerwarps.input;
 
 import com.artillexstudios.axapi.scheduler.Scheduler;
 import org.bukkit.entity.Player;
@@ -10,7 +10,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import java.util.WeakHashMap;
 import java.util.function.Consumer;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.INPUT;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.INPUT;
 
 public class InputListener implements Listener {
     public static WeakHashMap<Player, Consumer<String>> inputPlayers = new WeakHashMap<>();

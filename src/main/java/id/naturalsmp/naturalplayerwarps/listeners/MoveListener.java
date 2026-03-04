@@ -1,11 +1,11 @@
-package com.artillexstudios.axplayerwarps.listeners;
+package id.naturalsmp.naturalplayerwarps.listeners;
 
-import com.artillexstudios.axplayerwarps.warps.WarpQueue;
+import id.naturalsmp.naturalplayerwarps.warps.WarpQueue;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class MoveListener implements Listener {
 

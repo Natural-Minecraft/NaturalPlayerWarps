@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.user;
+package id.naturalsmp.naturalplayerwarps.user;
 
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

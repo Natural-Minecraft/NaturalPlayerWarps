@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.placeholders;
+package id.naturalsmp.naturalplayerwarps.placeholders;
 
 import com.artillexstudios.axapi.placeholders.PlaceholderArgument;
 import com.artillexstudios.axapi.placeholders.PlaceholderArguments;
@@ -6,17 +6,17 @@ import com.artillexstudios.axapi.placeholders.PlaceholderContext;
 import com.artillexstudios.axapi.placeholders.PlaceholderHandler;
 import com.artillexstudios.axapi.placeholders.exception.PlaceholderException;
 import com.artillexstudios.axapi.utils.functions.ThrowingFunction;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.database.impl.Base;
-import com.artillexstudios.axplayerwarps.enums.AccessList;
-import com.artillexstudios.axplayerwarps.placeholders.resolvers.WarpResolver;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
-import com.artillexstudios.axplayerwarps.utils.FormatUtils;
-import com.artillexstudios.axplayerwarps.utils.StarUtils;
-import com.artillexstudios.axplayerwarps.utils.TimeUtils;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.database.impl.Base;
+import id.naturalsmp.naturalplayerwarps.enums.AccessList;
+import id.naturalsmp.naturalplayerwarps.placeholders.resolvers.WarpResolver;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.utils.FormatUtils;
+import id.naturalsmp.naturalplayerwarps.utils.StarUtils;
+import id.naturalsmp.naturalplayerwarps.utils.TimeUtils;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.Nullable;
@@ -24,8 +24,8 @@ import org.jetbrains.annotations.Nullable;
 import java.text.DecimalFormat;
 import java.util.Optional;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.LANG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.LANG;
 
 public class WarpPlaceholders {
     private static final PlaceholderArgument<Warp> warpArg = new PlaceholderArgument<>("warp", WarpResolver.class);
@@ -112,7 +112,7 @@ public class WarpPlaceholders {
         registerWarp("owner", handler -> {
             Warp warp = getWarp(handler);
             if (warp == null) return empty;
-            return AxPlayerWarps.getDatabase().getPlayerName(warp.getOwner());
+            return NaturalPlayerWarps.getDatabase().getPlayerName(warp.getOwner());
         });
 
         registerWarp("created", handler -> {

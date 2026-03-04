@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import com.artillexstudios.axapi.utils.StringUtils;
 import com.willfp.ecobits.currencies.Currencies;
@@ -24,7 +24,7 @@ public class EcoBitsHook implements CurrencyHook {
     public void setup() {
         currency = Currencies.getByID(internal);
         if (currency == null) {
-            Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#FF0000[AxPlayerWarps] EcoBits currency named &#DD0000" + internal + " &#FF0000not found! Change the currency-name or disable the hook to get rid of this warning!"));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#FF0000[NaturalPlayerWarps] EcoBits currency named &#DD0000" + internal + " &#FF0000not found! Change the currency-name or disable the hook to get rid of this warning!"));
         }
     }
 

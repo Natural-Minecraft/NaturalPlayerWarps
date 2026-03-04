@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.commands.annotations;
+package id.naturalsmp.naturalplayerwarps.commands.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

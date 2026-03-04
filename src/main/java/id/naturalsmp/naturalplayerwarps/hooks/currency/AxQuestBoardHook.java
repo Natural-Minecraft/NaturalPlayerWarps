@@ -1,11 +1,11 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import com.artillexstudios.axquestboard.api.AxQuestBoardAPI;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CURRENCIES;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CURRENCIES;
 
 public class AxQuestBoardHook implements CurrencyHook {
 

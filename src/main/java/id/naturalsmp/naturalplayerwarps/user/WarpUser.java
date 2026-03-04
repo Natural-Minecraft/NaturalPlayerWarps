@@ -1,12 +1,12 @@
-package com.artillexstudios.axplayerwarps.user;
+package id.naturalsmp.naturalplayerwarps.user;
 
 import com.artillexstudios.axguiframework.GuiFrame;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.category.Category;
-import com.artillexstudios.axplayerwarps.category.CategoryManager;
-import com.artillexstudios.axplayerwarps.sorting.Sort;
-import com.artillexstudios.axplayerwarps.sorting.SortingManager;
-import com.artillexstudios.axplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.category.Category;
+import id.naturalsmp.naturalplayerwarps.category.CategoryManager;
+import id.naturalsmp.naturalplayerwarps.sorting.Sort;
+import id.naturalsmp.naturalplayerwarps.sorting.SortingManager;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
 import org.apache.commons.collections4.queue.CircularFifoQueue;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -26,9 +26,9 @@ public class WarpUser {
     public WarpUser(Player player) {
         this.player = player;
 
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
-            AxPlayerWarps.getDatabase().loadOrUpdate(player);
-            favorites = Collections.synchronizedList(AxPlayerWarps.getDatabase().getFavoriteWarps(player));
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+            NaturalPlayerWarps.getDatabase().loadOrUpdate(player);
+            favorites = Collections.synchronizedList(NaturalPlayerWarps.getDatabase().getFavoriteWarps(player));
         });
     }
 
@@ -79,10 +79,10 @@ public class WarpUser {
 
     public int getWarpLimit() {
         if (hasBypass(player)) return Integer.MAX_VALUE;
-        int am = player.hasPermission("axplayerwarps.warps.1") ? 1 : 0;
+        int am = player.hasPermission("NaturalPlayerWarps.warps.1") ? 1 : 0;
         for (PermissionAttachmentInfo pai : player.getEffectivePermissions()) {
             if (!pai.getValue()) continue;
-            if (!pai.getPermission().startsWith("axplayerwarps.warps.")) continue;
+            if (!pai.getPermission().startsWith("NaturalPlayerWarps.warps.")) continue;
 
             int value = Integer.parseInt(pai.getPermission().substring(pai.getPermission().lastIndexOf('.') + 1));
             if (value > am) am = value;
@@ -95,7 +95,7 @@ public class WarpUser {
         final Player player = offlinePlayer.getPlayer();
         if (player == null) return false;
         if (player.hasPermission("*")) return true;
-        if (player.hasPermission("axplayerwarps.warps.*")) return true;
+        if (player.hasPermission("NaturalPlayerWarps.warps.*")) return true;
         return false;
     }
 }

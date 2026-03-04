@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.guis;
+package id.naturalsmp.naturalplayerwarps.guis;
 
 import com.artillexstudios.axapi.config.Config;
 import com.artillexstudios.axapi.items.WrappedItemStack;
@@ -15,18 +15,18 @@ import com.artillexstudios.axguiframework.GuiFrame;
 import com.artillexstudios.axguiframework.actions.GuiActions;
 import com.artillexstudios.axguiframework.item.AxGuiItem;
 import com.artillexstudios.axguiframework.replacements.Replacements;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.category.Category;
-import com.artillexstudios.axplayerwarps.category.CategoryManager;
-import com.artillexstudios.axplayerwarps.enums.Access;
-import com.artillexstudios.axplayerwarps.enums.AccessList;
-import com.artillexstudios.axplayerwarps.hooks.HookManager;
-import com.artillexstudios.axplayerwarps.hooks.currency.CurrencyHook;
-import com.artillexstudios.axplayerwarps.input.InputManager;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
-import com.artillexstudios.axplayerwarps.utils.WarpNameUtils;
-import com.artillexstudios.axplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.category.Category;
+import id.naturalsmp.naturalplayerwarps.category.CategoryManager;
+import id.naturalsmp.naturalplayerwarps.enums.Access;
+import id.naturalsmp.naturalplayerwarps.enums.AccessList;
+import id.naturalsmp.naturalplayerwarps.hooks.HookManager;
+import id.naturalsmp.naturalplayerwarps.hooks.currency.CurrencyHook;
+import id.naturalsmp.naturalplayerwarps.input.InputManager;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.utils.WarpNameUtils;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
 import com.artillexstudios.gui.guis.Gui;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
@@ -41,12 +41,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class EditWarpGui extends GuiFrame {
-    private static final Config GUI = new Config(new File(AxPlayerWarps.getInstance().getDataFolder(), "guis/edit-warp.yml"),
-            AxPlayerWarps.getInstance().getResource("guis/edit-warp.yml"),
+    private static final Config GUI = new Config(new File(NaturalPlayerWarps.getInstance().getDataFolder(), "guis/edit-warp.yml"),
+            NaturalPlayerWarps.getInstance().getResource("guis/edit-warp.yml"),
             GeneralSettings.builder().setUseDefaults(false).build(),
             LoaderSettings.builder().build(),
             DumperSettings.DEFAULT,
@@ -74,8 +74,8 @@ public class EditWarpGui extends GuiFrame {
         gui.setPlayerInventoryAction(event -> {
             if (event.getCurrentItem() == null) return;
             warp.setIcon(event.getCurrentItem().getType());
-            AxPlayerWarps.getThreadedQueue().submit(() -> {
-                AxPlayerWarps.getDatabase().updateWarp(warp);
+            NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                NaturalPlayerWarps.getDatabase().updateWarp(warp);
                 MESSAGEUTILS.sendLang(player, "editor.update-icon");
             });
             open();
@@ -91,8 +91,8 @@ public class EditWarpGui extends GuiFrame {
             GuiActions.run(player, this, event, file.getStringList("name-icon.actions"));
             if (event.isShiftClick() && event.isRightClick()) {
                 warp.setIcon(null);
-                AxPlayerWarps.getThreadedQueue().submit(() -> {
-                    AxPlayerWarps.getDatabase().updateWarp(warp);
+                NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                    NaturalPlayerWarps.getDatabase().updateWarp(warp);
                     MESSAGEUTILS.sendLang(player, "editor.remove-icon");
                 });
                 open();
@@ -120,11 +120,11 @@ public class EditWarpGui extends GuiFrame {
                     }
                 }
 
-                AxPlayerWarps.getThreadedQueue().submit(() -> {
+                NaturalPlayerWarps.getThreadedQueue().submit(() -> {
                     if (!warp.setName(result.replace(" ", "_"))) {
                         MESSAGEUTILS.sendLang(player, "errors.name-exists");
                     } else {
-                            AxPlayerWarps.getDatabase().updateWarp(warp);
+                            NaturalPlayerWarps.getDatabase().updateWarp(warp);
                             MESSAGEUTILS.sendLang(player, "editor.update-name");
                     }
                     Scheduler.get().run(() -> open());
@@ -139,8 +139,8 @@ public class EditWarpGui extends GuiFrame {
         createItem("location", event -> {
             GuiActions.run(player, this, event, file.getStringList("location.actions"));
             warp.setLocation(player.getLocation());
-            AxPlayerWarps.getThreadedQueue().submit(() -> {
-                AxPlayerWarps.getDatabase().updateWarp(warp);
+            NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                NaturalPlayerWarps.getDatabase().updateWarp(warp);
                 MESSAGEUTILS.sendLang(player, "editor.update-location");
             });
             open();
@@ -150,17 +150,17 @@ public class EditWarpGui extends GuiFrame {
             GuiActions.run(player, this, event, file.getStringList("transfer.actions"));
             warp.setLocation(player.getLocation());
             InputManager.getInput(player, "transfer", result -> {
-                AxPlayerWarps.getThreadedQueue().submit(() -> {
-                    UUID uuid = AxPlayerWarps.getDatabase().getUUIDFromName(result);
+                NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                    UUID uuid = NaturalPlayerWarps.getDatabase().getUUIDFromName(result);
                     if (uuid == null) {
                         MESSAGEUTILS.sendLang(player, "errors.player-not-found");
                     } else {
                         Player transferTo = Bukkit.getPlayer(uuid);
                         warp.setOwner(uuid);
-                        AxPlayerWarps.getDatabase().updateWarp(warp);
+                        NaturalPlayerWarps.getDatabase().updateWarp(warp);
                         OfflinePlayer pl = Bukkit.getOfflinePlayer(uuid);
-                        AxPlayerWarps.getDatabase().removeFromList(warp, AccessList.WHITELIST, pl);
-                        AxPlayerWarps.getDatabase().removeFromList(warp, AccessList.BLACKLIST, pl);
+                        NaturalPlayerWarps.getDatabase().removeFromList(warp, AccessList.WHITELIST, pl);
+                        NaturalPlayerWarps.getDatabase().removeFromList(warp, AccessList.BLACKLIST, pl);
 
                         if (transferTo != null)
                             MESSAGEUTILS.sendLang(transferTo, "editor.new-owner",
@@ -190,7 +190,7 @@ public class EditWarpGui extends GuiFrame {
                 }
             }
             warp.setAccess(accesses.get(idx));
-            AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().updateWarp(warp));
+            NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().updateWarp(warp));
             open();
         });
 
@@ -212,7 +212,7 @@ public class EditWarpGui extends GuiFrame {
                 }
             }
             warp.setCategory(idx == -1 ? null : categories.get(idx));
-            AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().updateWarp(warp));
+            NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().updateWarp(warp));
             open();
         });
 
@@ -235,7 +235,7 @@ public class EditWarpGui extends GuiFrame {
                                 return;
                             }
                             warp.setTeleportPrice(price);
-                            AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().updateWarp(warp));
+                            NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().updateWarp(warp));
                         }
                         open();
                     });
@@ -254,7 +254,7 @@ public class EditWarpGui extends GuiFrame {
                 }
             }
             warp.setCurrency(idx == -1 ? null : currencies.get(idx));
-            AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().updateWarp(warp));
+            NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().updateWarp(warp));
             open();
         });
 
@@ -307,8 +307,8 @@ public class EditWarpGui extends GuiFrame {
                     }
                     desc.add(result);
                     warp.setDescription(desc);
-                    AxPlayerWarps.getThreadedQueue().submit(() -> {
-                        AxPlayerWarps.getDatabase().updateWarp(warp);
+                    NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                        NaturalPlayerWarps.getDatabase().updateWarp(warp);
                         Scheduler.get().run(() -> open());
                     });
                 });
@@ -318,13 +318,13 @@ public class EditWarpGui extends GuiFrame {
                 if (event.isShiftClick()) {
                     desc.clear();
                     warp.setDescription(desc);
-                    AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().updateWarp(warp));
+                    NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().updateWarp(warp));
                     open();
                     return;
                 }
                 desc.removeLast();
                 warp.setDescription(desc);
-                AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().updateWarp(warp));
+                NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().updateWarp(warp));
                 open();
             }
         }, new Replacements(), List.of());

@@ -1,8 +1,8 @@
-package com.artillexstudios.axplayerwarps.world;
+package id.naturalsmp.naturalplayerwarps.world;
 
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 
@@ -14,9 +14,9 @@ public class WorldManager {
     public static void reload() {
         worlds.clear();
 
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             for (World world : Bukkit.getWorlds()) {
-                worlds.put(world, AxPlayerWarps.getDatabase().getWorldId(world));
+                worlds.put(world, NaturalPlayerWarps.getDatabase().getWorldId(world));
             }
         });
     }
@@ -26,8 +26,8 @@ public class WorldManager {
     }
 
     public static void onWorldLoad(World world) {
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
-            WorldManager.getWorlds().put(world, AxPlayerWarps.getDatabase().getWorldId(world));
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+            WorldManager.getWorlds().put(world, NaturalPlayerWarps.getDatabase().getWorldId(world));
         });
 
         for (Warp warp : WarpManager.getWarps()) {

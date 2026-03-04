@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.warps;
+package id.naturalsmp.naturalplayerwarps.warps;
 
 import com.artillexstudios.axapi.scheduler.Scheduler;
 import com.artillexstudios.axapi.utils.Cooldown;
@@ -9,8 +9,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.WeakHashMap;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class WarpQueue {
     private static final Map<Player, TeleportData> queue = new WeakHashMap<>();

@@ -1,10 +1,10 @@
-package com.artillexstudios.axplayerwarps.guis.actions;
+package id.naturalsmp.naturalplayerwarps.guis.actions;
 
 import com.artillexstudios.axguiframework.GuiFrame;
 import com.artillexstudios.axguiframework.actions.Action;
-import com.artillexstudios.axplayerwarps.category.Category;
-import com.artillexstudios.axplayerwarps.category.CategoryManager;
-import com.artillexstudios.axplayerwarps.guis.WarpsGui;
+import id.naturalsmp.naturalplayerwarps.category.Category;
+import id.naturalsmp.naturalplayerwarps.category.CategoryManager;
+import id.naturalsmp.naturalplayerwarps.guis.WarpsGui;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 

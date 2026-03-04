@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.guis;
+package id.naturalsmp.naturalplayerwarps.guis;
 
 import com.artillexstudios.axapi.config.Config;
 import com.artillexstudios.axapi.libs.boostedyaml.settings.dumper.DumperSettings;
@@ -15,16 +15,16 @@ import com.artillexstudios.axguiframework.actions.GuiActions;
 import com.artillexstudios.axguiframework.item.AxGuiItem;
 import com.artillexstudios.axguiframework.replacements.Replacements;
 import com.artillexstudios.axguiframework.utils.CooldownManager;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.category.Category;
-import com.artillexstudios.axplayerwarps.guis.actions.BackAction;
-import com.artillexstudios.axplayerwarps.guis.actions.CategoryAction;
-import com.artillexstudios.axplayerwarps.input.InputManager;
-import com.artillexstudios.axplayerwarps.sorting.WarpComparator;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.category.Category;
+import id.naturalsmp.naturalplayerwarps.guis.actions.BackAction;
+import id.naturalsmp.naturalplayerwarps.guis.actions.CategoryAction;
+import id.naturalsmp.naturalplayerwarps.input.InputManager;
+import id.naturalsmp.naturalplayerwarps.sorting.WarpComparator;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 import com.artillexstudios.gui.guis.Gui;
 import com.artillexstudios.gui.guis.PaginatedGui;
 import net.kyori.adventure.text.Component;
@@ -41,13 +41,13 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.LANG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.LANG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class WarpsGui extends GuiFrame {
-    private static final Config GUI = new Config(new File(AxPlayerWarps.getInstance().getDataFolder(), "guis/warps.yml"),
-            AxPlayerWarps.getInstance().getResource("guis/warps.yml"),
+    private static final Config GUI = new Config(new File(NaturalPlayerWarps.getInstance().getDataFolder(), "guis/warps.yml"),
+            NaturalPlayerWarps.getInstance().getResource("guis/warps.yml"),
             GeneralSettings.builder().setUseDefaults(false).build(),
             LoaderSettings.builder().build(),
             DumperSettings.DEFAULT,

@@ -1,11 +1,11 @@
-package com.artillexstudios.axplayerwarps.database;
+package id.naturalsmp.naturalplayerwarps.database;
 
 import com.artillexstudios.axapi.utils.Pair;
-import com.artillexstudios.axplayerwarps.category.Category;
-import com.artillexstudios.axplayerwarps.database.impl.Base;
-import com.artillexstudios.axplayerwarps.enums.AccessList;
-import com.artillexstudios.axplayerwarps.hooks.currency.CurrencyHook;
-import com.artillexstudios.axplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.category.Category;
+import id.naturalsmp.naturalplayerwarps.database.impl.Base;
+import id.naturalsmp.naturalplayerwarps.enums.AccessList;
+import id.naturalsmp.naturalplayerwarps.hooks.currency.CurrencyHook;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;

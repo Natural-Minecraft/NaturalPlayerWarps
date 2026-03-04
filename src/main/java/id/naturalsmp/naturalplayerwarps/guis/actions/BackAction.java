@@ -1,9 +1,9 @@
-package com.artillexstudios.axplayerwarps.guis.actions;
+package id.naturalsmp.naturalplayerwarps.guis.actions;
 
 import com.artillexstudios.axguiframework.GuiFrame;
 import com.artillexstudios.axguiframework.actions.Action;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
 import org.apache.commons.collections4.queue.CircularFifoQueue;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;

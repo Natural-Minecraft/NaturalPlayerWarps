@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.input;
+package id.naturalsmp.naturalplayerwarps.input;
 
 import com.artillexstudios.axapi.gui.AnvilInput;
 import com.artillexstudios.axapi.gui.SignInput;
@@ -15,7 +15,7 @@ import java.util.Locale;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.INPUT;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.INPUT;
 
 public class InputManager {
 

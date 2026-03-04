@@ -1,12 +1,12 @@
-package com.artillexstudios.axplayerwarps.utils;
+package id.naturalsmp.naturalplayerwarps.utils;
 
 import com.artillexstudios.axapi.utils.StringUtils;
 import revxrsal.commands.locales.LocaleReader;
 
 import java.util.Locale;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.LANG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.LANG;
 
 public class CommandMessages implements LocaleReader {
     @Override

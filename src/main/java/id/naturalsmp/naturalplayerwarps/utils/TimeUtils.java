@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.utils;
+package id.naturalsmp.naturalplayerwarps.utils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -6,8 +6,8 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.LANG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.LANG;
 
 public class TimeUtils {
 

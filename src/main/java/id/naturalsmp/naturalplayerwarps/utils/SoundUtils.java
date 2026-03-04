@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.utils;
+package id.naturalsmp.naturalplayerwarps.utils;
 
 import com.artillexstudios.axapi.utils.StringUtils;
 import org.bukkit.Bukkit;
@@ -27,7 +27,7 @@ public class SoundUtils {
 
             player.playSound(player, split[0], volume, pitch);
         } catch (Exception ex) {
-            Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#FF0000[AxPlayerWarps] The sound %sound% does not exist, this is a configuration issue!".replace("%sound%", sound)));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#FF0000[NaturalPlayerWarps] The sound %sound% does not exist, this is a configuration issue!".replace("%sound%", sound)));
         }
     }
 }

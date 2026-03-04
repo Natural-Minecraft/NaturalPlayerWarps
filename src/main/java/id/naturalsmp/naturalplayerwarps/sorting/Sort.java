@@ -1,6 +1,6 @@
-package com.artillexstudios.axplayerwarps.sorting;
+package id.naturalsmp.naturalplayerwarps.sorting;
 
-import com.artillexstudios.axplayerwarps.enums.Sorting;
+import id.naturalsmp.naturalplayerwarps.enums.Sorting;
 
 public record Sort(String name, Sorting sorting, boolean reverse) {
 }

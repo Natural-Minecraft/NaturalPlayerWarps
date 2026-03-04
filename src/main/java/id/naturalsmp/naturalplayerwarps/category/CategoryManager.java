@@ -1,13 +1,13 @@
-package com.artillexstudios.axplayerwarps.category;
+package id.naturalsmp.naturalplayerwarps.category;
 
 import com.artillexstudios.axapi.libs.boostedyaml.block.implementation.Section;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 
 import java.util.LinkedHashMap;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
 
 public class CategoryManager {
     private static final LinkedHashMap<String, Category> categories = new LinkedHashMap<>();
@@ -15,13 +15,13 @@ public class CategoryManager {
     public static void reload() {
         categories.clear();
 
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             if (CONFIG.getSection("categories") == null) return;
             for (String raw : CONFIG.getSection("categories").getRoutesAsStrings(false)) {
                 Section section = CONFIG.getSection("categories." + raw);
 
                 String name = section.getString("name");
-                int id = AxPlayerWarps.getDatabase().getCategoryId(raw);
+                int id = NaturalPlayerWarps.getDatabase().getCategoryId(raw);
 
                 Category category = new Category(id, raw, name, section);
                 categories.put(raw, category);

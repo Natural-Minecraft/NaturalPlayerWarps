@@ -1,5 +1,4 @@
-package com.artillexstudios.axplayerwarps.libraries;
-
+package id.naturalsmp.naturalplayerwarps.libraries;
 
 import revxrsal.zapper.Dependency;
 import revxrsal.zapper.relocation.Relocation;
@@ -9,15 +8,18 @@ import java.util.List;
 
 public enum Libraries {
 
-    HIKARICP("com{}zaxxer:HikariCP:6.3.0", relocation("com{}zaxxer{}hikari", "com.artillexstudios.axplayerwarps.libs.hikari")),
+    HIKARICP("com{}zaxxer:HikariCP:6.3.0",
+            relocation("com{}zaxxer{}hikari", "id.naturalsmp.naturalplayerwarps.libs.hikari")),
 
-    MYSQL_CONNECTOR("com{}mysql:mysql-connector-j:9.2.0", relocation("com{}mysql", "com.artillexstudios.axplayerwarps.libs.mysql")),
+    MYSQL_CONNECTOR("com{}mysql:mysql-connector-j:9.2.0",
+            relocation("com{}mysql", "id.naturalsmp.naturalplayerwarps.libs.mysql")),
 
     SQLITE("org{}xerial:sqlite-jdbc:3.49.1.0"),
 
     H2_JDBC("com{}h2database:h2:2.1.214"),
 
-    POSTGRESQL("org{}postgresql:postgresql:42.7.5", relocation("org{}postgresql", "com.artillexstudios.axplayerwarps.libs.postgresql")),
+    POSTGRESQL("org{}postgresql:postgresql:42.7.5",
+            relocation("org{}postgresql", "id.naturalsmp.naturalplayerwarps.libs.postgresql")),
 
     COMMONS_COLLECTIONS("org{}apache{}commons:commons-collections4:4.5.0-M2");
 

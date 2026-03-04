@@ -1,10 +1,10 @@
-package com.artillexstudios.axplayerwarps.converters;
+package id.naturalsmp.naturalplayerwarps.converters;
 
 import com.artillexstudios.axapi.utils.StringUtils;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.enums.Access;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.enums.Access;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
@@ -40,7 +40,7 @@ public class PlayerWarpsConverter implements ConverterBase {
                     players.add(offlinePlayer);
                     warps++;
                     Location location = new Location(Bukkit.getWorld(rs.getString(3)), rs.getDouble(4), rs.getDouble(5), rs.getDouble(6), rs.getFloat(7), rs.getFloat(8));
-                    int id = AxPlayerWarps.getDatabase().createWarp(offlinePlayer, location, rs.getString(1));
+                    int id = NaturalPlayerWarps.getDatabase().createWarp(offlinePlayer, location, rs.getString(1));
                     Warp warp = new Warp(id, System.currentTimeMillis(), rs.getString(9), rs.getString(1), location, location.getWorld().getName(), null, offlinePlayer.getUniqueId(), offlinePlayer.getName(), Access.PUBLIC, null, 0, 0, null);
                     WarpManager.getWarps().add(warp);
                 }
@@ -48,6 +48,6 @@ public class PlayerWarpsConverter implements ConverterBase {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#33FF33[AxPlayerWarps] Finished converting " + warps + " warps of " + players.size() + " players!"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#33FF33[NaturalPlayerWarps] Finished converting " + warps + " warps of " + players.size() + " players!"));
     }
 }

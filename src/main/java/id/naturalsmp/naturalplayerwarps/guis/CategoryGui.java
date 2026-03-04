@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.guis;
+package id.naturalsmp.naturalplayerwarps.guis;
 
 import com.artillexstudios.axapi.config.Config;
 import com.artillexstudios.axapi.libs.boostedyaml.settings.dumper.DumperSettings;
@@ -7,17 +7,17 @@ import com.artillexstudios.axapi.libs.boostedyaml.settings.loader.LoaderSettings
 import com.artillexstudios.axapi.libs.boostedyaml.settings.updater.UpdaterSettings;
 import com.artillexstudios.axapi.utils.StringUtils;
 import com.artillexstudios.axguiframework.GuiFrame;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
 import com.artillexstudios.gui.guis.Gui;
 import org.bukkit.entity.Player;
 
 import java.io.File;
 
 public class CategoryGui extends GuiFrame {
-    private static final Config GUI = new Config(new File(AxPlayerWarps.getInstance().getDataFolder(), "guis/categories.yml"),
-            AxPlayerWarps.getInstance().getResource("guis/categories.yml"),
+    private static final Config GUI = new Config(new File(NaturalPlayerWarps.getInstance().getDataFolder(), "guis/categories.yml"),
+            NaturalPlayerWarps.getInstance().getResource("guis/categories.yml"),
             GeneralSettings.builder().setUseDefaults(false).build(),
             LoaderSettings.builder().build(),
             DumperSettings.DEFAULT,

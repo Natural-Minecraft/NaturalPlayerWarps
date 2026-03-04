@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.enums;
+package id.naturalsmp.naturalplayerwarps.enums;
 
 public enum Access {
     PUBLIC,

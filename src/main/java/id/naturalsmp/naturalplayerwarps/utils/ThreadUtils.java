@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.utils;
+package id.naturalsmp.naturalplayerwarps.utils;
 
 import org.bukkit.Bukkit;
 import org.slf4j.Logger;

@@ -1,11 +1,11 @@
-package com.artillexstudios.axplayerwarps.database.impl;
+package id.naturalsmp.naturalplayerwarps.database.impl;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 import java.sql.Connection;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
 
 public class MySQL extends Base {
     private HikariDataSource dataSource;
@@ -29,7 +29,7 @@ public class MySQL extends Base {
     public void setup() {
         final HikariConfig hConfig = new HikariConfig();
 
-        hConfig.setPoolName("axplayerwarps-pool");
+        hConfig.setPoolName("NaturalPlayerWarps-pool");
 
         hConfig.setMaximumPoolSize(CONFIG.getInt("database.pool.maximum-pool-size"));
         hConfig.setMinimumIdle(CONFIG.getInt("database.pool.minimum-idle"));

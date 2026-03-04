@@ -1,6 +1,6 @@
-package com.artillexstudios.axplayerwarps.utils;
+package id.naturalsmp.naturalplayerwarps.utils;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
 
 public class WarpNameUtils {
     public enum ValidationResult {

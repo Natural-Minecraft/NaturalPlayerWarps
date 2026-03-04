@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.guis;
+package id.naturalsmp.naturalplayerwarps.guis;
 
 import com.artillexstudios.axapi.config.Config;
 import com.artillexstudios.axapi.libs.boostedyaml.settings.dumper.DumperSettings;
@@ -13,13 +13,13 @@ import com.artillexstudios.axapi.utils.StringUtils;
 import com.artillexstudios.axguiframework.GuiFrame;
 import com.artillexstudios.axguiframework.actions.GuiActions;
 import com.artillexstudios.axguiframework.item.AxGuiItem;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.database.impl.Base;
-import com.artillexstudios.axplayerwarps.enums.AccessList;
-import com.artillexstudios.axplayerwarps.input.InputManager;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
-import com.artillexstudios.axplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.database.impl.Base;
+import id.naturalsmp.naturalplayerwarps.enums.AccessList;
+import id.naturalsmp.naturalplayerwarps.input.InputManager;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
 import com.artillexstudios.gui.guis.Gui;
 import com.artillexstudios.gui.guis.PaginatedGui;
 import org.bukkit.Bukkit;
@@ -33,11 +33,11 @@ import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class WhitelistGui extends GuiFrame {
-    private static final Config GUI = new Config(new File(AxPlayerWarps.getInstance().getDataFolder(), "guis/whitelist.yml"),
-            AxPlayerWarps.getInstance().getResource("guis/whitelist.yml"),
+    private static final Config GUI = new Config(new File(NaturalPlayerWarps.getInstance().getDataFolder(), "guis/whitelist.yml"),
+            NaturalPlayerWarps.getInstance().getResource("guis/whitelist.yml"),
             GeneralSettings.builder().setUseDefaults(false).build(),
             LoaderSettings.builder().build(),
             DumperSettings.DEFAULT,
@@ -73,8 +73,8 @@ public class WhitelistGui extends GuiFrame {
         createItem("add", event -> {
             GuiActions.run(player, this, event, file.getStringList("add.actions"));
             if (event.isRightClick() && event.isShiftClick()) {
-                AxPlayerWarps.getThreadedQueue().submit(() -> {
-                    AxPlayerWarps.getDatabase().clearList(warp, al);
+                NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                    NaturalPlayerWarps.getDatabase().clearList(warp, al);
                     MESSAGEUTILS.sendLang(player, al.name().toLowerCase() + ".clear");
                     open();
                 });
@@ -86,12 +86,12 @@ public class WhitelistGui extends GuiFrame {
                     open();
                     return;
                 }
-                AxPlayerWarps.getThreadedQueue().submit(() -> {
-                    UUID uuid = AxPlayerWarps.getDatabase().getUUIDFromName(result);
+                NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                    UUID uuid = NaturalPlayerWarps.getDatabase().getUUIDFromName(result);
                     if (uuid == null) {
                         MESSAGEUTILS.sendLang(player, "errors.player-not-found");
                     } else {
-                        AxPlayerWarps.getDatabase().addToList(warp, al, Bukkit.getOfflinePlayer(uuid));
+                        NaturalPlayerWarps.getDatabase().addToList(warp, al, Bukkit.getOfflinePlayer(uuid));
                         MESSAGEUTILS.sendLang(player, al.name().toLowerCase() + ".add", Map.of("%player%", result));
                     }
                     Scheduler.get().run(() -> open());
@@ -113,7 +113,7 @@ public class WhitelistGui extends GuiFrame {
 
     public CompletableFuture<Void> load() {
         final CompletableFuture<Void> future = new CompletableFuture<>();
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             gui.clearPageItems();
             for (Base.AccessPlayer accessPlayer : warp.getAccessList(al)) {
                 ItemBuilder builder = ItemBuilder.create(file.getSection(al.getRoute()));
@@ -134,8 +134,8 @@ public class WhitelistGui extends GuiFrame {
                 builder.setLore(lore);
 
                 gui.addItem(new AxGuiItem(builder.get(), event -> {
-                    AxPlayerWarps.getThreadedQueue().submit(() -> {
-                        AxPlayerWarps.getDatabase().removeFromList(warp, al, accessPlayer.player());
+                    NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                        NaturalPlayerWarps.getDatabase().removeFromList(warp, al, accessPlayer.player());
                         MESSAGEUTILS.sendLang(player, al.name().toLowerCase() + ".remove", Map.of("%player%", accessPlayer.name()));
                         open();
                     });

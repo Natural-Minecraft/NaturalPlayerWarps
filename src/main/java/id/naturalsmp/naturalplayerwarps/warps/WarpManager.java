@@ -1,6 +1,6 @@
-package com.artillexstudios.axplayerwarps.warps;
+package id.naturalsmp.naturalplayerwarps.warps;
 
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ public class WarpManager {
     private static final ArrayList<Warp> warps = new ArrayList<>();
 
     public static void load() {
-        AxPlayerWarps.getThreadedQueue().submit(() -> AxPlayerWarps.getDatabase().loadWarps());
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> NaturalPlayerWarps.getDatabase().loadWarps());
     }
 
     public static ArrayList<Warp> getWarps() {

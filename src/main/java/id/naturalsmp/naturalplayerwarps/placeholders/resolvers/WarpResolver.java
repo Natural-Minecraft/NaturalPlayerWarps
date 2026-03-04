@@ -1,8 +1,8 @@
-package com.artillexstudios.axplayerwarps.placeholders.resolvers;
+package id.naturalsmp.naturalplayerwarps.placeholders.resolvers;
 
 import com.artillexstudios.axapi.placeholders.PlaceholderArgumentResolver;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 
 import javax.annotation.Nullable;
 

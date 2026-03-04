@@ -1,11 +1,11 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import org.jetbrains.annotations.NotNull;
 import org.kingdoms.constants.player.KingdomPlayer;
 
 import java.util.UUID;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CURRENCIES;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CURRENCIES;
 
 public class KingdomsXHook implements CurrencyHook {
 

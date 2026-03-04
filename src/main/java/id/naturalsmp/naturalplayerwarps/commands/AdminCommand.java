@@ -1,14 +1,14 @@
-package com.artillexstudios.axplayerwarps.commands;
+package id.naturalsmp.naturalplayerwarps.commands;
 
 import com.artillexstudios.axapi.utils.StringUtils;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.commands.annotations.AllWarps;
-import com.artillexstudios.axplayerwarps.commands.subcommands.Converter;
-import com.artillexstudios.axplayerwarps.commands.subcommands.Reload;
-import com.artillexstudios.axplayerwarps.enums.AccessList;
-import com.artillexstudios.axplayerwarps.enums.Converters;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.commands.annotations.AllWarps;
+import id.naturalsmp.naturalplayerwarps.commands.subcommands.Converter;
+import id.naturalsmp.naturalplayerwarps.commands.subcommands.Reload;
+import id.naturalsmp.naturalplayerwarps.enums.AccessList;
+import id.naturalsmp.naturalplayerwarps.enums.Converters;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
@@ -20,13 +20,13 @@ import revxrsal.commands.orphan.OrphanCommand;
 
 import java.util.Map;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.LANG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.LANG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class AdminCommand implements OrphanCommand {
 
     @DefaultFor({"~", "~ help"})
-    @CommandPermission("axplayerwarps.admin.help")
+    @CommandPermission("NaturalPlayerWarps.admin.help")
     public void help(@NotNull CommandSender sender) {
         for (String m : LANG.getStringList("admin-help")) {
             sender.sendMessage(StringUtils.formatToString(m));
@@ -34,24 +34,24 @@ public class AdminCommand implements OrphanCommand {
     }
 
     @Subcommand("reload")
-    @CommandPermission("axplayerwarps.admin.reload")
+    @CommandPermission("NaturalPlayerWarps.admin.reload")
     public void reload(@NotNull CommandSender sender) {
         Reload.INSTANCE.execute(sender);
     }
 
     @Subcommand("delete")
-    @CommandPermission("axplayerwarps.admin.delete")
+    @CommandPermission("NaturalPlayerWarps.admin.delete")
     public void delete(@NotNull CommandSender sender, @AllWarps Warp warp) {
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
-            AxPlayerWarps.getDatabase().deleteWarp(warp);
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+            NaturalPlayerWarps.getDatabase().deleteWarp(warp);
             MESSAGEUTILS.sendLang(sender, "admin.deleted", Map.of("%warp%", warp.getName()));
         });
     }
 
     @Subcommand("deleteid")
-    @CommandPermission("axplayerwarps.admin.delete")
+    @CommandPermission("NaturalPlayerWarps.admin.delete")
     public void deleteId(@NotNull CommandSender sender, int id) {
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             Warp warp = null;
             for (Warp w : WarpManager.getWarps()) {
                 if (id != w.getId()) continue;
@@ -62,26 +62,26 @@ public class AdminCommand implements OrphanCommand {
                 MESSAGEUTILS.sendLang(sender, "errors.not-found", Map.of("%warp%", String.valueOf(id)));
                 throw new CommandErrorException();
             }
-            AxPlayerWarps.getDatabase().deleteWarp(warp);
+            NaturalPlayerWarps.getDatabase().deleteWarp(warp);
             MESSAGEUTILS.sendLang(sender, "admin.deleted", Map.of("%warp%", warp.getName()));
         });
     }
 
     @Subcommand("setowner")
-    @CommandPermission("axplayerwarps.admin.setowner")
+    @CommandPermission("NaturalPlayerWarps.admin.setowner")
     public void setOwner(@NotNull CommandSender sender, @AllWarps Warp warp, OfflinePlayer player) {
-        AxPlayerWarps.getThreadedQueue().submit(() -> {
+        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             warp.setOwner(player.getUniqueId());
-            AxPlayerWarps.getDatabase().updateWarp(warp);
-            AxPlayerWarps.getDatabase().removeFromList(warp, AccessList.WHITELIST, player);
-            AxPlayerWarps.getDatabase().removeFromList(warp, AccessList.BLACKLIST, player);
+            NaturalPlayerWarps.getDatabase().updateWarp(warp);
+            NaturalPlayerWarps.getDatabase().removeFromList(warp, AccessList.WHITELIST, player);
+            NaturalPlayerWarps.getDatabase().removeFromList(warp, AccessList.BLACKLIST, player);
 
             MESSAGEUTILS.sendLang(sender, "admin.setowner", Map.of("%warp%", warp.getName(), "%player%", player.getName() == null ? "---" : player.getName()));
         });
     }
 
     @Subcommand("converter")
-    @CommandPermission("axplayerwarps.admin.converter")
+    @CommandPermission("NaturalPlayerWarps.admin.converter")
     public void converter(CommandSender sender, Converters converters) {
         Converter.INSTANCE.execute(sender, converters);
     }

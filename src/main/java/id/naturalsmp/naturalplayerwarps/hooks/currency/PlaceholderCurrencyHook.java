@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import com.artillexstudios.axapi.libs.boostedyaml.block.implementation.Section;
 import me.clip.placeholderapi.PlaceholderAPI;

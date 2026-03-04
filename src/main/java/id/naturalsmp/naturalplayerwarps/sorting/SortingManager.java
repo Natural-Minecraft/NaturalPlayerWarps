@@ -1,14 +1,14 @@
-package com.artillexstudios.axplayerwarps.sorting;
+package id.naturalsmp.naturalplayerwarps.sorting;
 
 import com.artillexstudios.axapi.libs.boostedyaml.block.implementation.Section;
-import com.artillexstudios.axplayerwarps.enums.Sorting;
+import id.naturalsmp.naturalplayerwarps.enums.Sorting;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
 
 public class SortingManager {
     private static final LinkedList<Sort> enabledSorting = new LinkedList<>();

@@ -1,6 +1,6 @@
-package com.artillexstudios.axplayerwarps.listeners;
+package id.naturalsmp.naturalplayerwarps.listeners;
 
-import com.artillexstudios.axplayerwarps.world.WorldManager;
+import id.naturalsmp.naturalplayerwarps.world.WorldManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.world.WorldLoadEvent;

@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import com.artillexstudios.axapi.utils.StringUtils;
 import org.bukkit.Bukkit;
@@ -22,7 +22,7 @@ public class CoinsEngineHook implements CurrencyHook {
     public void setup() {
         currency = CoinsEngineAPI.getCurrency(internal);
         if (currency == null) {
-            Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#FF0000[AxPlayerWarps] CoinsEngine currency named &#DD0000" + internal + " &#FF0000not found! Change the currency-name or disable the hook to get rid of this warning!"));
+            Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#FF0000[NaturalPlayerWarps] CoinsEngine currency named &#DD0000" + internal + " &#FF0000not found! Change the currency-name or disable the hook to get rid of this warning!"));
         }
     }
 

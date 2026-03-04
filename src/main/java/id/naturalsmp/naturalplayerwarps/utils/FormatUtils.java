@@ -1,7 +1,7 @@
-package com.artillexstudios.axplayerwarps.utils;
+package id.naturalsmp.naturalplayerwarps.utils;
 
-import com.artillexstudios.axplayerwarps.hooks.currency.CurrencyHook;
-import com.artillexstudios.axplayerwarps.placeholders.WarpPlaceholders;
+import id.naturalsmp.naturalplayerwarps.hooks.currency.CurrencyHook;
+import id.naturalsmp.naturalplayerwarps.placeholders.WarpPlaceholders;
 
 public class FormatUtils {
 

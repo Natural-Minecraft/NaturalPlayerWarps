@@ -1,6 +1,6 @@
-package com.artillexstudios.axplayerwarps.database.impl;
+package id.naturalsmp.naturalplayerwarps.database.impl;
 
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
 import org.h2.jdbc.JdbcConnection;
 
 import java.sql.Connection;
@@ -23,7 +23,7 @@ public class H2 extends Base {
     @Override
     public void setup() {
         try {
-            conn = new H2Connection("jdbc:h2:./" + AxPlayerWarps.getInstance().getDataFolder() + "/data;mode=MySQL", new Properties(), null, null, false);
+            conn = new H2Connection("jdbc:h2:./" + NaturalPlayerWarps.getInstance().getDataFolder() + "/data;mode=MySQL", new Properties(), null, null, false);
             conn.setAutoCommit(true);
         } catch (Exception e) {
             throw new RuntimeException(e);

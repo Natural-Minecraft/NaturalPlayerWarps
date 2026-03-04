@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.hooks.currency;
+package id.naturalsmp.naturalplayerwarps.hooks.currency;
 
 import org.black_ixx.playerpoints.PlayerPoints;
 import org.black_ixx.playerpoints.PlayerPointsAPI;
@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CURRENCIES;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CURRENCIES;
 
 public class PlayerPointsHook implements CurrencyHook {
     private PlayerPointsAPI econ = null;

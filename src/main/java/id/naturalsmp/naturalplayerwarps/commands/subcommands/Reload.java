@@ -1,37 +1,37 @@
-package com.artillexstudios.axplayerwarps.commands.subcommands;
+package id.naturalsmp.naturalplayerwarps.commands.subcommands;
 
 import com.artillexstudios.axapi.utils.StringUtils;
-import com.artillexstudios.axplayerwarps.category.CategoryManager;
-import com.artillexstudios.axplayerwarps.guis.BlacklistGui;
-import com.artillexstudios.axplayerwarps.guis.CategoryGui;
-import com.artillexstudios.axplayerwarps.guis.EditWarpGui;
-import com.artillexstudios.axplayerwarps.guis.FavoritesGui;
-import com.artillexstudios.axplayerwarps.guis.MyWarpsGui;
-import com.artillexstudios.axplayerwarps.guis.RateWarpGui;
-import com.artillexstudios.axplayerwarps.guis.RecentsGui;
-import com.artillexstudios.axplayerwarps.guis.WarpsGui;
-import com.artillexstudios.axplayerwarps.guis.WhitelistGui;
-import com.artillexstudios.axplayerwarps.hooks.HookManager;
-import com.artillexstudios.axplayerwarps.placeholders.WarpPlaceholders;
-import com.artillexstudios.axplayerwarps.sorting.SortingManager;
-import com.artillexstudios.axplayerwarps.world.WorldManager;
+import id.naturalsmp.naturalplayerwarps.category.CategoryManager;
+import id.naturalsmp.naturalplayerwarps.guis.BlacklistGui;
+import id.naturalsmp.naturalplayerwarps.guis.CategoryGui;
+import id.naturalsmp.naturalplayerwarps.guis.EditWarpGui;
+import id.naturalsmp.naturalplayerwarps.guis.FavoritesGui;
+import id.naturalsmp.naturalplayerwarps.guis.MyWarpsGui;
+import id.naturalsmp.naturalplayerwarps.guis.RateWarpGui;
+import id.naturalsmp.naturalplayerwarps.guis.RecentsGui;
+import id.naturalsmp.naturalplayerwarps.guis.WarpsGui;
+import id.naturalsmp.naturalplayerwarps.guis.WhitelistGui;
+import id.naturalsmp.naturalplayerwarps.hooks.HookManager;
+import id.naturalsmp.naturalplayerwarps.placeholders.WarpPlaceholders;
+import id.naturalsmp.naturalplayerwarps.sorting.SortingManager;
+import id.naturalsmp.naturalplayerwarps.world.WorldManager;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 
 import java.util.Map;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CURRENCIES;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.HOOKS;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.INPUT;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.LANG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CURRENCIES;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.HOOKS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.INPUT;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.LANG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public enum Reload {
     INSTANCE;
 
     public void execute(CommandSender sender) {
-        Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#33EEBB[AxPlayerWarps] &#99FFDDReloading configuration..."));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.formatToString("&#33EEBB[NaturalPlayerWarps] &#99FFDDReloading configuration..."));
         if (!CONFIG.reload()) {
             MESSAGEUTILS.sendLang(sender, "reload.failed", Map.of("%file%", "config.yml"));
             return;

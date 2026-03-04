@@ -1,8 +1,8 @@
-package com.artillexstudios.axplayerwarps.enums;
+package id.naturalsmp.naturalplayerwarps.enums;
 
 public enum AccessList {
-    WHITELIST("axplayerwarps_whitelisted", "whitelisted"),
-    BLACKLIST("axplayerwarps_blacklisted", "blacklisted");
+    WHITELIST("NaturalPlayerWarps_whitelisted", "whitelisted"),
+    BLACKLIST("NaturalPlayerWarps_blacklisted", "blacklisted");
 
     private final String table;
     private final String route;

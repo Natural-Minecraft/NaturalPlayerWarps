@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.category;
+package id.naturalsmp.naturalplayerwarps.category;
 
 import com.artillexstudios.axapi.libs.boostedyaml.block.implementation.Section;
 

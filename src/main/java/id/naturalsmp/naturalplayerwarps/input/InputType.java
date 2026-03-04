@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.input;
+package id.naturalsmp.naturalplayerwarps.input;
 
 public enum InputType {
     SIGN,

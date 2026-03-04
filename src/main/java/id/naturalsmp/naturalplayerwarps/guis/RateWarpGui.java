@@ -1,4 +1,4 @@
-package com.artillexstudios.axplayerwarps.guis;
+package id.naturalsmp.naturalplayerwarps.guis;
 
 import com.artillexstudios.axapi.config.Config;
 import com.artillexstudios.axapi.libs.boostedyaml.settings.dumper.DumperSettings;
@@ -10,11 +10,11 @@ import com.artillexstudios.axapi.utils.NumberUtils;
 import com.artillexstudios.axapi.utils.StringUtils;
 import com.artillexstudios.axguiframework.GuiFrame;
 import com.artillexstudios.axguiframework.actions.GuiActions;
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.input.InputManager;
-import com.artillexstudios.axplayerwarps.user.Users;
-import com.artillexstudios.axplayerwarps.user.WarpUser;
-import com.artillexstudios.axplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.input.InputManager;
+import id.naturalsmp.naturalplayerwarps.user.Users;
+import id.naturalsmp.naturalplayerwarps.user.WarpUser;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
 import com.artillexstudios.gui.guis.Gui;
 import org.bukkit.entity.Player;
 
@@ -22,11 +22,11 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class RateWarpGui extends GuiFrame {
-    private static final Config GUI = new Config(new File(AxPlayerWarps.getInstance().getDataFolder(), "guis/rate-warp.yml"),
-            AxPlayerWarps.getInstance().getResource("guis/rate-warp.yml"),
+    private static final Config GUI = new Config(new File(NaturalPlayerWarps.getInstance().getDataFolder(), "guis/rate-warp.yml"),
+            NaturalPlayerWarps.getInstance().getResource("guis/rate-warp.yml"),
             GeneralSettings.builder().setUseDefaults(false).build(),
             LoaderSettings.builder().build(),
             DumperSettings.DEFAULT,
@@ -63,12 +63,12 @@ public class RateWarpGui extends GuiFrame {
         boolean isFavorite = user.getFavorites().contains(warp);
         createItem("favorite." + (isFavorite ? "favorite" : "not-favorite"), event -> {
             GuiActions.run(player, this, event, file.getStringList("favorite.actions"));
-            AxPlayerWarps.getThreadedQueue().submit(() -> {
+            NaturalPlayerWarps.getThreadedQueue().submit(() -> {
                 if (isFavorite) {
-                    AxPlayerWarps.getDatabase().removeFromFavorites(player, warp);
+                    NaturalPlayerWarps.getDatabase().removeFromFavorites(player, warp);
                     MESSAGEUTILS.sendLang(player, "favorite.remove", Map.of("%warp%", warp.getName()));
                 } else {
-                    AxPlayerWarps.getDatabase().addToFavorites(player, warp);
+                    NaturalPlayerWarps.getDatabase().addToFavorites(player, warp);
                     MESSAGEUTILS.sendLang(player, "favorite.add", Map.of("%warp%", warp.getName()));
                 }
                 Scheduler.get().run(() -> open());
@@ -83,8 +83,8 @@ public class RateWarpGui extends GuiFrame {
         createItem("rate", event -> {
             GuiActions.run(player, this, event, file.getStringList("rate.actions"));
             if (event.isRightClick()) {
-                AxPlayerWarps.getThreadedQueue().submit(() -> {
-                    AxPlayerWarps.getDatabase().removeRating(player, warp);
+                NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                    NaturalPlayerWarps.getDatabase().removeRating(player, warp);
                     MESSAGEUTILS.sendLang(player, "rate.remove");
                     Scheduler.get().run(() -> open());
                 });
@@ -95,8 +95,8 @@ public class RateWarpGui extends GuiFrame {
                         MESSAGEUTILS.sendLang(player, "errors.not-a-number");
                     } else {
                         int i = Math.max(1, Math.min(5, Integer.parseInt(result)));
-                        AxPlayerWarps.getThreadedQueue().submit(() -> {
-                            AxPlayerWarps.getDatabase().setRating(player, warp, i);
+                        NaturalPlayerWarps.getThreadedQueue().submit(() -> {
+                            NaturalPlayerWarps.getDatabase().setRating(player, warp, i);
                             MESSAGEUTILS.sendLang(player, "rate.add", Map.of("%rating%", "" + i));
                         });
                     }

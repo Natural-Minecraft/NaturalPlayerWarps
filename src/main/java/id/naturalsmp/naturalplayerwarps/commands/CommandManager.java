@@ -1,11 +1,11 @@
-package com.artillexstudios.axplayerwarps.commands;
+package id.naturalsmp.naturalplayerwarps.commands;
 
-import com.artillexstudios.axplayerwarps.AxPlayerWarps;
-import com.artillexstudios.axplayerwarps.commands.annotations.AllWarps;
-import com.artillexstudios.axplayerwarps.commands.annotations.OwnWarps;
-import com.artillexstudios.axplayerwarps.utils.CommandMessages;
-import com.artillexstudios.axplayerwarps.warps.Warp;
-import com.artillexstudios.axplayerwarps.warps.WarpManager;
+import id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps;
+import id.naturalsmp.naturalplayerwarps.commands.annotations.AllWarps;
+import id.naturalsmp.naturalplayerwarps.commands.annotations.OwnWarps;
+import id.naturalsmp.naturalplayerwarps.utils.CommandMessages;
+import id.naturalsmp.naturalplayerwarps.warps.Warp;
+import id.naturalsmp.naturalplayerwarps.warps.WarpManager;
 import revxrsal.commands.bukkit.BukkitCommandActor;
 import revxrsal.commands.bukkit.BukkitCommandHandler;
 import revxrsal.commands.exception.CommandErrorException;
@@ -15,14 +15,14 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.CONFIG;
-import static com.artillexstudios.axplayerwarps.AxPlayerWarps.MESSAGEUTILS;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.CONFIG;
+import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 
 public class CommandManager {
     private static BukkitCommandHandler handler = null;
 
     public static void load() {
-        handler = BukkitCommandHandler.create(AxPlayerWarps.getInstance());
+        handler = BukkitCommandHandler.create(NaturalPlayerWarps.getInstance());
 
         handler.getTranslator().add(new CommandMessages());
         handler.setLocale(Locale.of("en", "US"));
