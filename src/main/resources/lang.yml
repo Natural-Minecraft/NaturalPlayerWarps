@@ -1,26 +1,26 @@
-# DOCUMENTATION: https://docs.artillex-studios.com/axplayerwarps.html
+# DOCUMENTATION: https://docs.artillex-studios.com/naturalplayerwarps.html
 
 help:
   - " "
-  - "<gradient:#33EEBB:#3388BB><b>AxPlayerWarps</b></gradient> <#33CCBB>Help"
-  - " <#33CCBB>➤ <white>/axpw [open] [player] <#DDDDDD>| <#BBFFDD>Open warp menu"
-  - " <#33CCBB>➤ <white>/axpw create <name> <#DDDDDD>| <#BBFFDD>Create warp"
-  - " <#33CCBB>➤ <white>/axpw delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
-  - " <#33CCBB>➤ <white>/axpw edit <warp> <#DDDDDD>| <#BBFFDD>Open warp editor"
-  - " <#33CCBB>➤ <white>/axpw warp <warp> <#DDDDDD>| <#BBFFDD>Teleport to warp"
-  - " <#33CCBB>➤ <white>/axpw info <warp> <#DDDDDD>| <#BBFFDD>Warp information"
-  - " <#33CCBB>➤ <white>/axpw set <warp> <#DDDDDD>| <#BBFFDD>Update warp location"
-  - " <#33CCBB>➤ <white>/axpw settings <warp> <#DDDDDD>| <#BBFFDD>Open warp settings"
-  - " <#33CCBB>➤ <#44CCBB>/axpwadmin <#DDDDDD>| <#BBFFDD>Admin commands"
+  - "<gradient:#33EEBB:#3388BB><b>naturalplayerwarps</b></gradient> <#33CCBB>Help"
+  - " <#33CCBB>➤ <white>/npw [open] [player] <#DDDDDD>| <#BBFFDD>Open warp menu"
+  - " <#33CCBB>➤ <white>/npw create <name> <#DDDDDD>| <#BBFFDD>Create warp"
+  - " <#33CCBB>➤ <white>/npw delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
+  - " <#33CCBB>➤ <white>/npw edit <warp> <#DDDDDD>| <#BBFFDD>Open warp editor"
+  - " <#33CCBB>➤ <white>/npw warp <warp> <#DDDDDD>| <#BBFFDD>Teleport to warp"
+  - " <#33CCBB>➤ <white>/npw info <warp> <#DDDDDD>| <#BBFFDD>Warp information"
+  - " <#33CCBB>➤ <white>/npw set <warp> <#DDDDDD>| <#BBFFDD>Update warp location"
+  - " <#33CCBB>➤ <white>/npw settings <warp> <#DDDDDD>| <#BBFFDD>Open warp settings"
+  - " <#33CCBB>➤ <#44CCBB>/npwadmin <#DDDDDD>| <#BBFFDD>Admin commands"
   - " "
 
 admin-help:
   - " "
-  - "<gradient:#33EEBB:#3388BB><b>AxPlayerWarps</b></gradient> <#33CCBB>Admin Help"
-  - " <#33CCBB>➤ <white>/axpwadmin reload <#DDDDDD>| <#BBFFDD>Reload plugin"
-  - " <#33CCBB>➤ <white>/axpwadmin delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
-  - " <#33CCBB>➤ <white>/axpwadmin setowner <warp> <player> <#DDDDDD>| <#BBFFDD>Set owner of warp"
-  - " <#33CCBB>➤ <white>/axpwadmin converter <#DDDDDD>| <#BBFFDD>Convert data from another plugin"
+  - "<gradient:#33EEBB:#3388BB><b>naturalplayerwarps</b></gradient> <#33CCBB>Admin Help"
+  - " <#33CCBB>➤ <white>/npwadmin reload <#DDDDDD>| <#BBFFDD>Reload plugin"
+  - " <#33CCBB>➤ <white>/npwadmin delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
+  - " <#33CCBB>➤ <white>/npwadmin setowner <warp> <player> <#DDDDDD>| <#BBFFDD>Set owner of warp"
+  - " <#33CCBB>➤ <white>/npwadmin converter <#DDDDDD>| <#BBFFDD>Convert data from another plugin"
   - " "
 
 access:
@@ -163,7 +163,7 @@ commands:
   invalid-player: "&#FF0000The player &#BB0000%player% &#FF0000can not be found!"
   invalid-selector: "&#FF0000You can not use this selector in this command!"
 
-update-notifier: "&#88CCFFThere is a new version of AxPlayerWarps available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
+update-notifier: "&#88CCFFThere is a new version of naturalplayerwarps available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
 
 # do not change this
 version: 6

@@ -26,7 +26,7 @@ import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 public class AdminCommand implements OrphanCommand {
 
     @DefaultFor({"~", "~ help"})
-    @CommandPermission("NaturalPlayerWarps.admin.help")
+    @CommandPermission("naturalplayerwarps.admin.help")
     public void help(@NotNull CommandSender sender) {
         for (String m : LANG.getStringList("admin-help")) {
             sender.sendMessage(StringUtils.formatToString(m));
@@ -34,13 +34,13 @@ public class AdminCommand implements OrphanCommand {
     }
 
     @Subcommand("reload")
-    @CommandPermission("NaturalPlayerWarps.admin.reload")
+    @CommandPermission("naturalplayerwarps.admin.reload")
     public void reload(@NotNull CommandSender sender) {
         Reload.INSTANCE.execute(sender);
     }
 
     @Subcommand("delete")
-    @CommandPermission("NaturalPlayerWarps.admin.delete")
+    @CommandPermission("naturalplayerwarps.admin.delete")
     public void delete(@NotNull CommandSender sender, @AllWarps Warp warp) {
         NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             NaturalPlayerWarps.getDatabase().deleteWarp(warp);
@@ -49,7 +49,7 @@ public class AdminCommand implements OrphanCommand {
     }
 
     @Subcommand("deleteid")
-    @CommandPermission("NaturalPlayerWarps.admin.delete")
+    @CommandPermission("naturalplayerwarps.admin.delete")
     public void deleteId(@NotNull CommandSender sender, int id) {
         NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             Warp warp = null;
@@ -68,7 +68,7 @@ public class AdminCommand implements OrphanCommand {
     }
 
     @Subcommand("setowner")
-    @CommandPermission("NaturalPlayerWarps.admin.setowner")
+    @CommandPermission("naturalplayerwarps.admin.setowner")
     public void setOwner(@NotNull CommandSender sender, @AllWarps Warp warp, OfflinePlayer player) {
         NaturalPlayerWarps.getThreadedQueue().submit(() -> {
             warp.setOwner(player.getUniqueId());
@@ -81,7 +81,7 @@ public class AdminCommand implements OrphanCommand {
     }
 
     @Subcommand("converter")
-    @CommandPermission("NaturalPlayerWarps.admin.converter")
+    @CommandPermission("naturalplayerwarps.admin.converter")
     public void converter(CommandSender sender, Converters converters) {
         Converter.INSTANCE.execute(sender, converters);
     }

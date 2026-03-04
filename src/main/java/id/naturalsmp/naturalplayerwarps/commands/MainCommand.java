@@ -24,8 +24,8 @@ import static id.naturalsmp.naturalplayerwarps.NaturalPlayerWarps.MESSAGEUTILS;
 public class MainCommand implements OrphanCommand {
 
     @DefaultFor({"~"})
-    @CommandPermission("NaturalPlayerWarps.open")
-    public void open(@NotNull CommandSender sender, @Optional @CommandPermission("NaturalPlayerWarps.use") Warp warp) {
+    @CommandPermission("naturalplayerwarps.open")
+    public void open(@NotNull CommandSender sender, @Optional @CommandPermission("naturalplayerwarps.use") Warp warp) {
         if (warp != null) {
             if (!(sender instanceof Player pl)) throw new CommandErrorException("must-be-player");
             warp.teleportPlayer(pl);
@@ -35,7 +35,7 @@ public class MainCommand implements OrphanCommand {
     }
 
     @Subcommand({"help"})
-    @CommandPermission("NaturalPlayerWarps.help")
+    @CommandPermission("naturalplayerwarps.help")
     public void help(@NotNull CommandSender sender) {
         for (String m : LANG.getStringList("help")) {
             sender.sendMessage(StringUtils.formatToString(m));
@@ -43,25 +43,25 @@ public class MainCommand implements OrphanCommand {
     }
 
     @Subcommand({"open"})
-    @CommandPermission("NaturalPlayerWarps.open")
-    public void open2(@NotNull CommandSender sender, @CommandPermission("NaturalPlayerWarps.open.other") @Optional Player player) {
+    @CommandPermission("naturalplayerwarps.open")
+    public void open2(@NotNull CommandSender sender, @CommandPermission("naturalplayerwarps.open.other") @Optional Player player) {
         Open.INSTANCE.execute(sender, player);
     }
 
     @Subcommand({"warp", "go"})
-    @CommandPermission("NaturalPlayerWarps.use")
+    @CommandPermission("naturalplayerwarps.use")
     public void warp(@NotNull Player sender, @AllWarps Warp warp) {
         warp.teleportPlayer(sender);
     }
 
     @Subcommand({"create", "set"})
-    @CommandPermission("NaturalPlayerWarps.create") // @CommandPermission("NaturalPlayerWarps.create.other") @Optional OfflinePlayer player
+    @CommandPermission("naturalplayerwarps.create") // @CommandPermission("naturalplayerwarps.create.other") @Optional OfflinePlayer player
     public void create(@NotNull Player sender, String warpName) {
         Create.INSTANCE.execute(sender, warpName, null);
     }
 
     @Subcommand({"delete"})
-    @CommandPermission("NaturalPlayerWarps.delete")
+    @CommandPermission("naturalplayerwarps.delete")
     public void delete(@NotNull Player sender, @OwnWarps Warp warp) {
         if (!warp.getOwner().equals(sender.getUniqueId())) {
             MESSAGEUTILS.sendLang(sender, "errors.not-your-warp");
@@ -71,7 +71,7 @@ public class MainCommand implements OrphanCommand {
     }
 
     @Subcommand({"edit", "settings"})
-    @CommandPermission("NaturalPlayerWarps.edit")
+    @CommandPermission("naturalplayerwarps.edit")
     public void edit(@NotNull Player sender, @OwnWarps Warp warp) {
         if (!warp.getOwner().equals(sender.getUniqueId())) {
             MESSAGEUTILS.sendLang(sender, "errors.not-your-warp");
@@ -81,7 +81,7 @@ public class MainCommand implements OrphanCommand {
     }
 
     @Subcommand({"info"})
-    @CommandPermission("NaturalPlayerWarps.info")
+    @CommandPermission("naturalplayerwarps.info")
     public void info(@NotNull CommandSender sender, @AllWarps Warp warp) {
         Info.INSTANCE.execute(sender, warp);
     }

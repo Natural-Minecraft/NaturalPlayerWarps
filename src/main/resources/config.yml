@@ -1,6 +1,6 @@
-# DOCUMENTATION: https://docs.artillex-studios.com/axplayerwarps.html
+# DOCUMENTATION: https://docs.artillex-studios.com/naturalplayerwarps.html
 
-prefix: "<gradient:#33EEBB:#3388BB><b>AxPlayerWarps</b></gradient> &7» "
+prefix: "<gradient:#33EEBB:#3388BB><b>naturalplayerwarps</b></gradient> &7» "
 
 database:
   # options: h2, mysql, postgresql
@@ -22,8 +22,8 @@ database:
 # you must define at least 1
 # requires a restart to update
 main-command-aliases:
-  - "axplayerwarps"
-  - "axpw"
+  - "naturalplayerwarps"
+  - "npw"
   - "pw"
   - "playerwarps"
   - "playerwarp"
@@ -32,8 +32,8 @@ main-command-aliases:
 
 # requires a restart to update
 admin-command-aliases:
-  - "axplayerwarpsadmin"
-  - "axpwadmin"
+  - "naturalplayerwarpsadmin"
+  - "npwadmin"
   - "pwadmin"
   - "playerwarpsadmin"
   - "playerwarpadmin"
@@ -94,7 +94,7 @@ confirmation-milliseconds: 10000
 
 # how many seconds before the player gets teleported?
 # if they move, the teleport will be cancelled
-# you can bypass this with the axplayerwarps.delay-bypass permission
+# you can bypass this with the naturalplayerwarps.delay-bypass permission
 teleport-delay-seconds: 3
 
 warp-description:
