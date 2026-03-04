@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.artillexstudios</groupId>
-    <artifactId>AxPlayerWarps</artifactId>
+    <groupId>id.naturalsmp</groupId>
+    <artifactId>NaturalPlayerWarps</artifactId>
     <version>1.12.5</version>
     <packaging>jar</packaging>
 
-    <name>AxPlayerWarps</name>
+    <name>NaturalPlayerWarps</name>
 
     <properties>
         <java.version>21</java.version>
@@ -43,35 +43,35 @@
                             <relocations>
                                 <relocation>
                                     <pattern>com.artillexstudios.axapi</pattern>
-                                    <shadedPattern>com.artillexstudios.axplayerwarps.libs.axapi</shadedPattern>
+                                    <shadedPattern>id.naturalsmp.naturalplayerwarps.libs.axapi</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.bstats</pattern>
-                                    <shadedPattern>com.artillexstudios.axplayerwarps.libs.bstats</shadedPattern>
+                                    <shadedPattern>id.naturalsmp.naturalplayerwarps.libs.bstats</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.artillexstudios.axguiframework</pattern>
-                                    <shadedPattern>com.artillexstudios.axplayerwarps.libs.gui</shadedPattern>
+                                    <shadedPattern>id.naturalsmp.naturalplayerwarps.libs.gui</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>revxrsal.commands</pattern>
-                                    <shadedPattern>com.artillexstudios.axplayerwarps.libs.lamp</shadedPattern>
+                                    <shadedPattern>id.naturalsmp.naturalplayerwarps.libs.lamp</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.zaxxer.hikari</pattern>
-                                    <shadedPattern>com.artillexstudios.axplayerwarps.libs.hikari</shadedPattern>
+                                    <shadedPattern>id.naturalsmp.naturalplayerwarps.libs.hikari</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.artillexstudios.axintegrations</pattern>
-                                    <shadedPattern>com.artillexstudios.axplayerwarps.libs.axintegrations</shadedPattern>
+                                    <shadedPattern>id.naturalsmp.naturalplayerwarps.libs.axintegrations</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>com.mysql</pattern>
-                                    <shadedPattern>com.artillexstudios.axplayerwarps.libs.mysql</shadedPattern>
+                                    <shadedPattern>id.naturalsmp.naturalplayerwarps.libs.mysql</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>org.postgresql</pattern>
-                                    <shadedPattern>com.artillexstudios.axplayerwarps.libs.postgresql</shadedPattern>
+                                    <shadedPattern>id.naturalsmp.naturalplayerwarps.libs.postgresql</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
