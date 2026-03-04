@@ -2,7 +2,7 @@
 
 help:
   - " "
-  - "<gradient:#33EEBB:#3388BB><b>naturalplayerwarps</b></gradient> <#33CCBB>Help"
+  - "<gradient:#33EEBB:#3388BB><b>Warps</b></gradient> <#33CCBB>Help"
   - " <#33CCBB>➤ <white>/npw [open] [player] <#DDDDDD>| <#BBFFDD>Open warp menu"
   - " <#33CCBB>➤ <white>/npw create <name> <#DDDDDD>| <#BBFFDD>Create warp"
   - " <#33CCBB>➤ <white>/npw delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
@@ -16,7 +16,7 @@ help:
 
 admin-help:
   - " "
-  - "<gradient:#33EEBB:#3388BB><b>naturalplayerwarps</b></gradient> <#33CCBB>Admin Help"
+  - "<gradient:#33EEBB:#3388BB><b>Warps</b></gradient> <#33CCBB>Admin Help"
   - " <#33CCBB>➤ <white>/npwadmin reload <#DDDDDD>| <#BBFFDD>Reload plugin"
   - " <#33CCBB>➤ <white>/npwadmin delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
   - " <#33CCBB>➤ <white>/npwadmin setowner <warp> <player> <#DDDDDD>| <#BBFFDD>Set owner of warp"
@@ -163,7 +163,7 @@ commands:
   invalid-player: "&#FF0000The player &#BB0000%player% &#FF0000can not be found!"
   invalid-selector: "&#FF0000You can not use this selector in this command!"
 
-update-notifier: "&#88CCFFThere is a new version of naturalplayerwarps available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
+update-notifier: "&#88CCFFThere is a new version of Warps available! &#DDDDDD(&#FFFFFFcurrent: &#FF0000%current% &#DDDDDD| &#FFFFFFlatest: &#00FF00%latest%&#DDDDDD)"
 
 # do not change this
 version: 6
