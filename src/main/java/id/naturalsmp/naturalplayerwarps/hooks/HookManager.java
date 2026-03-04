@@ -6,9 +6,9 @@ import com.artillexstudios.axintegrations.integration.protection.ProtectionInteg
 import com.artillexstudios.axintegrations.integration.protection.ProtectionIntegrations;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.AxQuestBoardHook;
 // import id.naturalsmp.naturalplayerwarps.hooks.currency.BeastTokensHook;
-import id.naturalsmp.naturalplayerwarps.hooks.currency.CoinsEngineHook;
+// import id.naturalsmp.naturalplayerwarps.hooks.currency.CoinsEngineHook;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.CurrencyHook;
-import id.naturalsmp.naturalplayerwarps.hooks.currency.EcoBitsHook;
+// import id.naturalsmp.naturalplayerwarps.hooks.currency.EcoBitsHook;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.ExperienceHook;
 // import id.naturalsmp.naturalplayerwarps.hooks.currency.KingdomsXHook;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.PlaceholderCurrencyHook;
@@ -19,7 +19,7 @@ import id.naturalsmp.naturalplayerwarps.hooks.currency.RedisEconomyHook;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.SuperMobCoinsHook;
 // import id.naturalsmp.naturalplayerwarps.hooks.currency.TheOnlyMobCoins;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.TokenManagerHook;
-import id.naturalsmp.naturalplayerwarps.hooks.currency.UltraEconomyHook;
+// import id.naturalsmp.naturalplayerwarps.hooks.currency.UltraEconomyHook;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.VaultHook;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -78,14 +78,19 @@ public class HookManager {
                     .sendMessage(StringUtils.formatToString("&#33FF33[NaturalPlayerWarps] Hooked into PlayerPoints!"));
         }
 
-        if (CURRENCIES.getBoolean("currencies.CoinsEngine.register", true)
-                && Bukkit.getPluginManager().getPlugin("CoinsEngine") != null) {
-            for (Map<Object, Object> curr : CURRENCIES.getMapList("currencies.CoinsEngine.enabled")) {
-                currency.add(new CoinsEngineHook((String) curr.get("currency-name"), (String) curr.get("name")));
-            }
-            Bukkit.getConsoleSender()
-                    .sendMessage(StringUtils.formatToString("&#33FF33[NaturalPlayerWarps] Hooked into CoinsEngine!"));
-        }
+        /*
+         * if (CURRENCIES.getBoolean("currencies.CoinsEngine.register", true)
+         * && Bukkit.getPluginManager().getPlugin("CoinsEngine") != null) {
+         * for (Map<Object, Object> curr :
+         * CURRENCIES.getMapList("currencies.CoinsEngine.enabled")) {
+         * currency.add(new CoinsEngineHook((String) curr.get("currency-name"), (String)
+         * curr.get("name")));
+         * }
+         * Bukkit.getConsoleSender()
+         * .sendMessage(StringUtils.
+         * formatToString("&#33FF33[NaturalPlayerWarps] Hooked into CoinsEngine!"));
+         * }
+         */
 
         /*
          * if (CURRENCIES.getBoolean("currencies.RoyaleEconomy.register", true) &&
@@ -96,14 +101,19 @@ public class HookManager {
          * }
          */
 
-        if (CURRENCIES.getBoolean("currencies.UltraEconomy.register", true)
-                && Bukkit.getPluginManager().getPlugin("UltraEconomy") != null) {
-            for (Map<Object, Object> curr : CURRENCIES.getMapList("currencies.UltraEconomy.enabled")) {
-                currency.add(new UltraEconomyHook((String) curr.get("currency-name"), (String) curr.get("name")));
-            }
-            Bukkit.getConsoleSender()
-                    .sendMessage(StringUtils.formatToString("&#33FF33[NaturalPlayerWarps] Hooked into UltraEconomy!"));
-        }
+        /*
+         * if (CURRENCIES.getBoolean("currencies.UltraEconomy.register", true)
+         * && Bukkit.getPluginManager().getPlugin("UltraEconomy") != null) {
+         * for (Map<Object, Object> curr :
+         * CURRENCIES.getMapList("currencies.UltraEconomy.enabled")) {
+         * currency.add(new UltraEconomyHook((String) curr.get("currency-name"),
+         * (String) curr.get("name")));
+         * }
+         * Bukkit.getConsoleSender()
+         * .sendMessage(StringUtils.
+         * formatToString("&#33FF33[NaturalPlayerWarps] Hooked into UltraEconomy!"));
+         * }
+         */
 
         /*
          * if (CURRENCIES.getBoolean("currencies.KingdomsX.register", true) &&
@@ -173,14 +183,19 @@ public class HookManager {
          * }
          */
 
-        if (CURRENCIES.getBoolean("currencies.EcoBits.register", true)
-                && Bukkit.getPluginManager().getPlugin("EcoBits") != null) {
-            for (Map<Object, Object> curr : CURRENCIES.getMapList("currencies.EcoBits.enabled")) {
-                currency.add(new EcoBitsHook((String) curr.get("currency-name"), (String) curr.get("name")));
-            }
-            Bukkit.getConsoleSender()
-                    .sendMessage(StringUtils.formatToString("&#33FF33[NaturalPlayerWarps] Hooked into EcoBits!"));
-        }
+        /*
+         * if (CURRENCIES.getBoolean("currencies.EcoBits.register", true)
+         * && Bukkit.getPluginManager().getPlugin("EcoBits") != null) {
+         * for (Map<Object, Object> curr :
+         * CURRENCIES.getMapList("currencies.EcoBits.enabled")) {
+         * currency.add(new EcoBitsHook((String) curr.get("currency-name"), (String)
+         * curr.get("name")));
+         * }
+         * Bukkit.getConsoleSender()
+         * .sendMessage(StringUtils.
+         * formatToString("&#33FF33[NaturalPlayerWarps] Hooked into EcoBits!"));
+         * }
+         */
 
         for (String str : CURRENCIES.getSection("placeholder-currencies").getRoutesAsStrings(false)) {
             if (!CURRENCIES.getBoolean("placeholder-currencies." + str + ".register", false))
