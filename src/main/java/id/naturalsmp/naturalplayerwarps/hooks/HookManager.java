@@ -16,7 +16,7 @@ import id.naturalsmp.naturalplayerwarps.hooks.currency.PlayerPointsHook;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.RedisEconomyHook;
 // import id.naturalsmp.naturalplayerwarps.hooks.currency.RivalHarvesterHoesHook;
 // import id.naturalsmp.naturalplayerwarps.hooks.currency.RoyaleEconomyHook;
-import id.naturalsmp.naturalplayerwarps.hooks.currency.SuperMobCoinsHook;
+// import id.naturalsmp.naturalplayerwarps.hooks.currency.SuperMobCoinsHook;
 // import id.naturalsmp.naturalplayerwarps.hooks.currency.TheOnlyMobCoins;
 import id.naturalsmp.naturalplayerwarps.hooks.currency.TokenManagerHook;
 // import id.naturalsmp.naturalplayerwarps.hooks.currency.UltraEconomyHook;
@@ -134,12 +134,15 @@ public class HookManager {
          * }
          */
 
-        if (CURRENCIES.getBoolean("currencies.SuperMobCoins.register", true)
-                && Bukkit.getPluginManager().getPlugin("SuperMobCoins") != null) {
-            currency.add(new SuperMobCoinsHook());
-            Bukkit.getConsoleSender()
-                    .sendMessage(StringUtils.formatToString("&#33FF33[NaturalPlayerWarps] Hooked into SuperMobCoins!"));
-        }
+        /*
+         * if (CURRENCIES.getBoolean("currencies.SuperMobCoins.register", true)
+         * && Bukkit.getPluginManager().getPlugin("SuperMobCoins") != null) {
+         * currency.add(new SuperMobCoinsHook());
+         * Bukkit.getConsoleSender()
+         * .sendMessage(StringUtils.
+         * formatToString("&#33FF33[NaturalPlayerWarps] Hooked into SuperMobCoins!"));
+         * }
+         */
 
         /*
          * if (CURRENCIES.getBoolean("currencies.TheOnly-MobCoins.register", true) &&
