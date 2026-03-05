@@ -25,49 +25,49 @@ filler:
 favorites:
   slot: 0
   # this font is called 'small caps'
-  name: "&#33EEBB&lᴍʏ ғᴀᴠᴏʀɪᴛᴇ ᴡᴀʀᴘs"
+  name: "&#3388BB&lᴍʏ ғᴀᴠᴏʀɪᴛᴇ ᴡᴀʀᴘs"
   type: GOLDEN_APPLE
   lore:
     - " "
-    - " &fClick here to view the &#BBFFDD%favorite_warps% &fwarps"
+    - " &fClick here to view the &#33EEBB%favorite_warps% &fwarps"
     - " &fthat you have added to your favorites!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Favorites"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Favorites"
   actions:
     - "[MENU] favorites"
     - "[SOUND] ui.button.click|1|1"
 
 category-all:
   slot: 4
-  name: "&#33EEBB&lᴀʟʟ ᴡᴀʀᴘs"
+  name: "&#3388BB&lᴀʟʟ ᴡᴀʀᴘs"
   type: ENDER_PEARL
   lore:
     - " "
-    - " &fClick here to view all the &#BBFFDD%total_warps%"
+    - " &fClick here to view all the &#33EEBB%total_warps%"
     - " &fplayer warps that are available on the server!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Warps"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Warps"
   actions:
     - "[CATEGORY] all"
     - "[SOUND] ui.button.click|1|1"
 
 recents:
   slot: 8
-  name: "&#33EEBB&lʀᴇᴄᴇɴᴛ ᴡᴀʀᴘs"
+  name: "&#3388BB&lʀᴇᴄᴇɴᴛ ᴡᴀʀᴘs"
   type: CLOCK
   lore:
     - " "
     - " &fClick here to view the warps"
     - " &fwhere you have teleported previously!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Recents"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Recents"
   actions:
     - "[MENU] recents"
     - "[SOUND] ui.button.click|1|1"
 
 category-building:
   slot: 21
-  name: "&#33EEBB&lʙᴜɪʟᴅɪɴɢ"
+  name: "&#3388BB&lʙᴜɪʟᴅɪɴɢ"
   type: OAK_PLANKS
   lore:
     - "&#AAAAAACATEGORY"
@@ -75,14 +75,14 @@ category-building:
     - " &fClick here to view all the"
     - " &fplayer warps in this category!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Category"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Category"
   actions:
     - "[CATEGORY] building"
     - "[SOUND] ui.button.click|1|1"
 
 category-shop:
   slot: 22
-  name: "&#33EEBB&lsʜᴏᴘ"
+  name: "&#3388BB&lsʜᴏᴘ"
   type: EMERALD
   lore:
     - "&#AAAAAACATEGORY"
@@ -90,14 +90,14 @@ category-shop:
     - " &fClick here to view all the"
     - " &fplayer warps in this category!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Category"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Category"
   actions:
     - "[CATEGORY] shop"
     - "[SOUND] ui.button.click|1|1"
 
 category-farm:
   slot: 23
-  name: "&#33EEBB&lғᴀʀᴍ"
+  name: "&#3388BB&lғᴀʀᴍ"
   type: WHEAT
   lore:
     - "&#AAAAAACATEGORY"
@@ -105,14 +105,14 @@ category-farm:
     - " &fClick here to view all the"
     - " &fplayer warps in this category!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Category"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Category"
   actions:
     - "[CATEGORY] farm"
     - "[SOUND] ui.button.click|1|1"
 
 category-pvp:
   slot: 29
-  name: "&#33EEBB&lᴘᴠᴘ"
+  name: "&#3388BB&lᴘᴠᴘ"
   type: TARGET
   lore:
     - "&#AAAAAACATEGORY"
@@ -120,14 +120,14 @@ category-pvp:
     - " &fClick here to view all the"
     - " &fplayer warps in this category!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Category"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Category"
   actions:
     - "[CATEGORY] pvp"
     - "[SOUND] ui.button.click|1|1"
 
 category-event:
   slot: 30
-  name: "&#33EEBB&lᴇᴠᴇɴᴛ"
+  name: "&#3388BB&lᴇᴠᴇɴᴛ"
   type: DIAMOND
   lore:
     - "&#AAAAAACATEGORY"
@@ -135,14 +135,14 @@ category-event:
     - " &fClick here to view all the"
     - " &fplayer warps in this category!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Category"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Category"
   actions:
     - "[CATEGORY] event"
     - "[SOUND] ui.button.click|1|1"
 
 category-fun:
   slot: 31
-  name: "&#33EEBB&lғᴜɴ"
+  name: "&#3388BB&lғᴜɴ"
   type: FIREWORK_ROCKET
   lore:
     - "&#AAAAAACATEGORY"
@@ -150,14 +150,14 @@ category-fun:
     - " &fClick here to view all the"
     - " &fplayer warps in this category!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Category"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Category"
   actions:
     - "[CATEGORY] fun"
     - "[SOUND] ui.button.click|1|1"
 
 category-special:
   slot: 32
-  name: "&#33EEBB&lsᴘᴇᴄɪᴀʟ"
+  name: "&#3388BB&lsᴘᴇᴄɪᴀʟ"
   type: NETHER_STAR
   lore:
     - "&#AAAAAACATEGORY"
@@ -165,14 +165,14 @@ category-special:
     - " &fClick here to view all the"
     - " &fplayer warps in this category!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Category"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Category"
   actions:
     - "[CATEGORY] special"
     - "[SOUND] ui.button.click|1|1"
 
 category-other:
   slot: 33
-  name: "&#33EEBB&lᴏᴛʜᴇʀ"
+  name: "&#3388BB&lᴏᴛʜᴇʀ"
   type: MAP
   lore:
     - "&#AAAAAACATEGORY"
@@ -180,7 +180,7 @@ category-other:
     - " &fClick here to view all the"
     - " &fplayer warps in this category!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen Category"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen Category"
   actions:
     - "[CATEGORY] other"
     - "[SOUND] ui.button.click|1|1"

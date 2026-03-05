@@ -14,42 +14,42 @@ auto-update-ticks: -1
 # ----- WARP ITEM -----
 
 warp:
-  name: "&#33EEBB&l%name%"
+  name: "&#3388BB&l%name%"
   lore:
     - " "
-    - "&#33EEBBDescription:"
+    - "&#3388BBDescription:"
     - "&#444444❙ &f%description%"
     - " "
-    - "&#33EEBBInformation"
-    - "  &#444444❙ &#BBFFDDOwner: &f%owner%"
-    - "  &#444444❙ &#BBFFDDCreated: &f%created%"
-    - "  &#444444❙ &#BBFFDDLocation: &f%world%, %x%, %y%, %z%"
-    - "  &#444444❙ &#BBFFDDCategory: &f%category%"
+    - "&#3388BBInformation"
+    - "  &#444444❙ &#33EEBBOwner: &f%owner%"
+    - "  &#444444❙ &#33EEBBCreated: &f%created%"
+    - "  &#444444❙ &#33EEBBLocation: &f%world%, %x%, %y%, %z%"
+    - "  &#444444❙ &#33EEBBCategory: &f%category%"
     - " "
-    - "&#33EEBBStatistics"
-    - "  &#444444❙ &#BBFFDDVisits: &f%visitors_unique%"
-    - "  &#444444❙ &#BBFFDDRating: &#FFDD00%rating_stars%"
-    - "  &#444444❙ &#BBFFDDFavorite of: &f%favorites% players"
+    - "&#3388BBStatistics"
+    - "  &#444444❙ &#33EEBBVisits: &f%visitors_unique%"
+    - "  &#444444❙ &#33EEBBRating: &#FFDD00%rating_stars%"
+    - "  &#444444❙ &#33EEBBFavorite of: &f%favorites% players"
     - " "
-    - "&#33EEBBCost of teleporting: &#BBFFDD%price%"
-    - "&#33EEBBAccess: &#BBFFDD%access%"
+    - "&#3388BBCost of teleporting: &#33EEBB%price%"
+    - "&#3388BBAccess: &#33EEBB%access%"
     - " "
-    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDTeleport"
-    - "&#33EEBB&lRight Click &#DDDDDD» &#BBFFDDReview & Options"
+    - "&#3388BB&lLeft Click &#DDDDDD» &#33EEBBTeleport"
+    - "&#3388BB&lRight Click &#DDDDDD» &#33EEBBReview & Options"
 
 # ----- ITEMS -----
 
 my-warps:
   slot: 45
   # this font is called 'small caps'
-  name: "&#33EEBB&lᴍʏ ᴡᴀʀᴘs"
+  name: "&#3388BB&lᴍʏ ᴡᴀʀᴘs"
   type: ENDER_PEARL
   lore:
     - " "
     - " &fClick here to view/edit/delete"
-    - " &fyour &#33EEBB%my_warps% &fwarps!"
+    - " &fyour &#3388BB%my_warps% &fwarps!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDOpen My Warps"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBOpen My Warps"
   actions:
     - "[MENU] my-warps"
     - "[SOUND] ui.button.click|1|1"
@@ -57,27 +57,27 @@ my-warps:
 sorting:
   slot: 46
   material: "GLOWSTONE_DUST"
-  name: "&#33EEBB&lsᴏʀᴛɪɴɢ"
+  name: "&#3388BB&lsᴏʀᴛɪɴɢ"
   lore:
     - " "
-    - " &#33EEBBCurrently selected:"
-    - "  &#444444❙ &#BBFFDD%sorting_selected%"
+    - " &#3388BBCurrently selected:"
+    - "  &#444444❙ &#33EEBB%sorting_selected%"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDChange Sorting"
-    - "&#33EEBB&lShift + Click &#DDDDDD» &#BBFFDDReset Sorting"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBChange Sorting"
+    - "&#3388BB&lShift + Click &#DDDDDD» &#33EEBBReset Sorting"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 previous-page:
   slot: 48
   material: "ARROW"
-  name: "&#33EEBB&lᴘʀᴇᴠɪᴏᴜs ᴘᴀɢᴇ"
+  name: "&#3388BB&lᴘʀᴇᴠɪᴏᴜs ᴘᴀɢᴇ"
   lore:
     - " "
     - " &fClick here to go back"
     - " &fto the previous page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDPrevious Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBPrevious Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[PAGE] previous"
@@ -85,13 +85,13 @@ previous-page:
 refresh:
   slot: 49
   material: "SUNFLOWER"
-  name: "&#33EEBB&lʀᴇғʀᴇsʜ"
+  name: "&#3388BB&lʀᴇғʀᴇsʜ"
   lore:
     - " "
     - " &fClick here to"
     - " &frefresh the page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDRefresh Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBRefresh Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[REFRESH]"
@@ -99,13 +99,13 @@ refresh:
 next-page:
   slot: 50
   material: "ARROW"
-  name: "&#33EEBB&lɴᴇxᴛ ᴘᴀɢᴇ"
+  name: "&#3388BB&lɴᴇxᴛ ᴘᴀɢᴇ"
   lore:
     - " "
     - " &fClick here to go"
     - " &fto the next page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDNext Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBNext Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[PAGE] next"
@@ -113,30 +113,30 @@ next-page:
 category:
   slot: 52
   material: "HOPPER"
-  name: "&#33EEBB&lᴄᴀᴛᴇɢᴏʀʏ"
+  name: "&#3388BB&lᴄᴀᴛᴇɢᴏʀʏ"
   lore:
     - " "
-    - " &#33EEBBCurrently selected:"
-    - "  &#444444❙ &#BBFFDD%category_selected%"
+    - " &#3388BBCurrently selected:"
+    - "  &#444444❙ &#33EEBB%category_selected%"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDChange Category"
-    - "&#33EEBB&lShift + Click &#DDDDDD» &#BBFFDDDelete Category Filter"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBChange Category"
+    - "&#3388BB&lShift + Click &#DDDDDD» &#33EEBBDelete Category Filter"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 search:
   slot: 53
   material: "SPYGLASS"
-  name: "&#33EEBB&lsᴇᴀʀᴄʜ ᴡᴀʀᴘs"
+  name: "&#3388BB&lsᴇᴀʀᴄʜ ᴡᴀʀᴘs"
   lore:
     - " "
     - " &fClick here to search for warps by"
     - " &ftheir name or by their owner's name!"
     - " "
-    - "&#33EEBBCurrent search: &#BBFFDD%search%"
+    - "&#3388BBCurrent search: &#33EEBB%search%"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDSearch"
-    - "&#33EEBB&lShift + Click &#DDDDDD» &#BBFFDDClear Search"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBSearch"
+    - "&#3388BB&lShift + Click &#DDDDDD» &#33EEBBClear Search"
   actions:
     - "[SOUND] ui.button.click|1|1"
 

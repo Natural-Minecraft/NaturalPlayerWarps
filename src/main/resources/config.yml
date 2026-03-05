@@ -1,6 +1,6 @@
 # DOCUMENTATION: https://docs.artillex-studios.com/naturalplayerwarps.html
 
-prefix: "<gradient:#33EEBB:#3388BB><b>Warps</b></gradient> &7» "
+prefix: "<gradient:#33EEBB:#3388BB><b>Natural PlayerWarps</b></gradient> &7» "
 
 database:
   # options: h2, mysql, postgresql

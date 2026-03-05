@@ -37,171 +37,171 @@ delete:
 name-icon:
   slot: 4
   # this font is called 'small caps'
-  name: "&#33EEBB&lɴᴀᴍᴇ & ɪᴄᴏɴ"
+  name: "&#3388BB&lɴᴀᴍᴇ & ɪᴄᴏɴ"
   type: ANVIL
   lore:
     - " "
-    - "&#33EEBBCurrent name:"
-    - "&#444444❙ &#BBFFDD%name%"
+    - "&#3388BBCurrent name:"
+    - "&#444444❙ &#33EEBB%name%"
     - "&#AAAAAAIf you rename a warp, other players"
     - "&#AAAAAAwill be able to take the old name!"
     - " "
-    - "&#33EEBBCurrent icon:"
-    - "&#444444❙ &#BBFFDD%icon%"
+    - "&#3388BBCurrent icon:"
+    - "&#444444❙ &#33EEBB%icon%"
     - "&#AAAAAAYou can change the icon by clicking on"
     - "&#AAAAAAan item in your bottom inventory!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDRename Warp"
-    - "&#33EEBB&lClick On Item &#DDDDDD» &#BBFFDDChange Icon"
-    - "&#33EEBB&lShift + Right Click &#DDDDDD» &#BBFFDDReset Icon"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBRename Warp"
+    - "&#3388BB&lClick On Item &#DDDDDD» &#33EEBBChange Icon"
+    - "&#3388BB&lShift + Right Click &#DDDDDD» &#33EEBBReset Icon"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 back:
   slot: 8
-  name: "&#33EEBB&lʙᴀᴄᴋ"
+  name: "&#3388BB&lʙᴀᴄᴋ"
   type: BARRIER
   lore:
     - " "
     - " &fClick here to go back"
     - " &fto the previous menu!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDBack to the Main Menu"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBBack to the Main Menu"
   actions:
     - "[BACK]"
     - "[SOUND] ui.button.click|1|1"
 
 description:
   slot: 20
-  name: "&#33EEBB&lᴅᴇsᴄʀɪᴘᴛɪᴏɴ"
+  name: "&#3388BB&lᴅᴇsᴄʀɪᴘᴛɪᴏɴ"
   type: PAPER
   lore:
     - " "
-    - "&#33EEBBCurrent description:"
+    - "&#3388BBCurrent description:"
     - " &#444444❙ &f%description%"
     - " "
-    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDAdd Line"
-    - "&#33EEBB&lRight Click &#DDDDDD» &#BBFFDDRemove Last Line"
-    - "&#33EEBB&lShift + Right Click &#DDDDDD» &#BBFFDDClear Lines"
+    - "&#3388BB&lLeft Click &#DDDDDD» &#33EEBBAdd Line"
+    - "&#3388BB&lRight Click &#DDDDDD» &#33EEBBRemove Last Line"
+    - "&#3388BB&lShift + Right Click &#DDDDDD» &#33EEBBClear Lines"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 category:
   slot: 21
-  name: "&#33EEBB&lᴄᴀᴛᴇɢᴏʀʏ"
+  name: "&#3388BB&lᴄᴀᴛᴇɢᴏʀʏ"
   type: HOPPER
   lore:
     - " "
-    - "&#33EEBBCurrent category:"
-    - " &#444444❙ &#BBFFDD%category%"
+    - "&#3388BBCurrent category:"
+    - " &#444444❙ &#33EEBB%category%"
     - " "
-    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDPrevious Category"
-    - "&#33EEBB&lRight Click &#DDDDDD» &#BBFFDDNext Category"
-    - "&#33EEBB&lShift + Right Click &#DDDDDD» &#BBFFDDUnset Category"
+    - "&#3388BB&lLeft Click &#DDDDDD» &#33EEBBPrevious Category"
+    - "&#3388BB&lRight Click &#DDDDDD» &#33EEBBNext Category"
+    - "&#3388BB&lShift + Right Click &#DDDDDD» &#33EEBBUnset Category"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 location:
   slot: 22
-  name: "&#33EEBB&lʟᴏᴄᴀᴛɪᴏɴ"
+  name: "&#3388BB&lʟᴏᴄᴀᴛɪᴏɴ"
   type: ENDER_PEARL
   lore:
     - " "
-    - "&#33EEBBTeleport location:"
-    - " &#444444❙ &#BBFFDD%world%, %x%, %y%, %z%"
+    - "&#3388BBTeleport location:"
+    - " &#444444❙ &#33EEBB%world%, %x%, %y%, %z%"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDUpdate Location"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBUpdate Location"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 access:
   slot: 23
-  name: "&#33EEBB&lᴀᴄᴄᴇss"
+  name: "&#3388BB&lᴀᴄᴄᴇss"
   type: TRIPWIRE_HOOK
   lore:
     - " "
-    - "&#33EEBBCurrent status:"
-    - " &#444444❙ &#BBFFDD%access%"
+    - "&#3388BBCurrent status:"
+    - " &#444444❙ &#33EEBB%access%"
     - " "
-    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDPrevious Status"
-    - "&#33EEBB&lRight Click &#DDDDDD» &#BBFFDDNext Status"
-    - "&#33EEBB&lShift + Right Click &#DDDDDD» &#BBFFDDReset Access"
+    - "&#3388BB&lLeft Click &#DDDDDD» &#33EEBBPrevious Status"
+    - "&#3388BB&lRight Click &#DDDDDD» &#33EEBBNext Status"
+    - "&#3388BB&lShift + Right Click &#DDDDDD» &#33EEBBReset Access"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 price:
   slot: 24
-  name: "&#33EEBB&lᴛᴇʟᴇᴘᴏʀᴛ ᴘʀɪᴄᴇ"
+  name: "&#3388BB&lᴛᴇʟᴇᴘᴏʀᴛ ᴘʀɪᴄᴇ"
   type: GOLD_NUGGET
   lore:
     - " "
-    - "&#33EEBBCurrent price:"
-    - " &#444444❙ &#BBFFDD%price-full%"
+    - "&#3388BBCurrent price:"
+    - " &#444444❙ &#33EEBB%price-full%"
     - " "
-    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDPrevious Currency"
-    - "&#33EEBB&lRight Click &#DDDDDD» &#BBFFDDNext Currency"
-    - "&#33EEBB&lShift + Left Click &#DDDDDD» &#BBFFDDChange Price"
-    - "&#33EEBB&lShift + Right Click &#DDDDDD» &#BBFFDDMake Free"
+    - "&#3388BB&lLeft Click &#DDDDDD» &#33EEBBPrevious Currency"
+    - "&#3388BB&lRight Click &#DDDDDD» &#33EEBBNext Currency"
+    - "&#3388BB&lShift + Left Click &#DDDDDD» &#33EEBBChange Price"
+    - "&#3388BB&lShift + Right Click &#DDDDDD» &#33EEBBMake Free"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 transfer:
   slot: 36
-  name: "&#33EEBB&lᴛʀᴀɴsғᴇʀ ᴏᴡɴᴇʀsʜɪᴘ"
+  name: "&#3388BB&lᴛʀᴀɴsғᴇʀ ᴏᴡɴᴇʀsʜɪᴘ"
   type: DIAMOND
   lore:
     - " "
-    - "&#33EEBBCurrent owner:"
-    - " &#444444❙ &#BBFFDD%owner%"
+    - "&#3388BBCurrent owner:"
+    - " &#444444❙ &#33EEBB%owner%"
     - " "
-    - "&#33EEBBThis is irreversible!"
+    - "&#3388BBThis is irreversible!"
     - " "
-    - "&#33EEBB&lShift + Right Click &#DDDDDD» &#BBFFDDTransfer"
+    - "&#3388BB&lShift + Right Click &#DDDDDD» &#33EEBBTransfer"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 whitelist:
   slot: 39
-  name: "&#33EEBB&lᴡʜɪᴛᴇʟɪsᴛ"
+  name: "&#3388BB&lᴡʜɪᴛᴇʟɪsᴛ"
   type: WHITE_CANDLE
   lore:
     - "&#AAAAAAWhitelisted players can use your warp"
     - "&#AAAAAAwhen it is set to the whitelisted access mode!"
     - " "
     - " &fThere are currently"
-    - " &#BBFFDD%whitelisted% &fwhitelisted players!"
+    - " &#33EEBB%whitelisted% &fwhitelisted players!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDEdit Whitelist"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBEdit Whitelist"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 blacklist:
   slot: 41
-  name: "&#33EEBB&lʙʟᴀᴄᴋʟɪsᴛ"
+  name: "&#3388BB&lʙʟᴀᴄᴋʟɪsᴛ"
   type: BLACK_CANDLE
   lore:
     - "&#AAAAAABlacklisted players can"
     - "&#AAAAAAnever use your warp!"
     - " "
     - " &fThere are currently"
-    - " &#BBFFDD%blacklisted% &fblacklisted players!"
+    - " &#33EEBB%blacklisted% &fblacklisted players!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDEdit Blacklist"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBEdit Blacklist"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 bank:
   slot: 44
-  name: "&#33EEBB&lʙᴀɴᴋ"
+  name: "&#3388BB&lʙᴀɴᴋ"
   type: RAW_GOLD
   lore:
     - "&#AAAAAAIf you set a teleport price,"
     - "&#AAAAAAmoney will be stored here!"
     - " "
-    - "&#33EEBBCurrent money:"
-    - " &#444444❙ &#BBFFDD%earned_money%"
+    - "&#3388BBCurrent money:"
+    - " &#444444❙ &#33EEBB%earned_money%"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDWithdraw Money"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBWithdraw Money"
   actions:
     - "[SOUND] ui.button.click|1|1"
 

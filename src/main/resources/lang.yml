@@ -2,25 +2,25 @@
 
 help:
   - " "
-  - "<gradient:#33EEBB:#3388BB><b>Warps</b></gradient> <#33CCBB>Help"
-  - " <#33CCBB>➤ <white>/npw [open] [player] <#DDDDDD>| <#BBFFDD>Open warp menu"
-  - " <#33CCBB>➤ <white>/npw create <name> <#DDDDDD>| <#BBFFDD>Create warp"
-  - " <#33CCBB>➤ <white>/npw delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
-  - " <#33CCBB>➤ <white>/npw edit <warp> <#DDDDDD>| <#BBFFDD>Open warp editor"
-  - " <#33CCBB>➤ <white>/npw warp <warp> <#DDDDDD>| <#BBFFDD>Teleport to warp"
-  - " <#33CCBB>➤ <white>/npw info <warp> <#DDDDDD>| <#BBFFDD>Warp information"
-  - " <#33CCBB>➤ <white>/npw set <warp> <#DDDDDD>| <#BBFFDD>Update warp location"
-  - " <#33CCBB>➤ <white>/npw settings <warp> <#DDDDDD>| <#BBFFDD>Open warp settings"
-  - " <#33CCBB>➤ <#44CCBB>/npwadmin <#DDDDDD>| <#BBFFDD>Admin commands"
+  - "<gradient:#33EEBB:#3388BB><b>Natural PlayerWarps</b></gradient> <#3388BB>Help"
+  - " <#3388BB>➤ <white>/npw [open] [player] <#DDDDDD>| <#33EEBB>Open warp menu"
+  - " <#3388BB>➤ <white>/npw create <name> <#DDDDDD>| <#33EEBB>Create warp"
+  - " <#3388BB>➤ <white>/npw delete <warp> <#DDDDDD>| <#33EEBB>Delete warp"
+  - " <#3388BB>➤ <white>/npw edit <warp> <#DDDDDD>| <#33EEBB>Open warp editor"
+  - " <#3388BB>➤ <white>/npw warp <warp> <#DDDDDD>| <#33EEBB>Teleport to warp"
+  - " <#3388BB>➤ <white>/npw info <warp> <#DDDDDD>| <#33EEBB>Warp information"
+  - " <#3388BB>➤ <white>/npw set <warp> <#DDDDDD>| <#33EEBB>Update warp location"
+  - " <#3388BB>➤ <white>/npw settings <warp> <#DDDDDD>| <#33EEBB>Open warp settings"
+  - " <#3388BB>➤ <#44CCBB>/npwadmin <#DDDDDD>| <#33EEBB>Admin commands"
   - " "
 
 admin-help:
   - " "
-  - "<gradient:#33EEBB:#3388BB><b>Warps</b></gradient> <#33CCBB>Admin Help"
-  - " <#33CCBB>➤ <white>/npwadmin reload <#DDDDDD>| <#BBFFDD>Reload plugin"
-  - " <#33CCBB>➤ <white>/npwadmin delete <warp> <#DDDDDD>| <#BBFFDD>Delete warp"
-  - " <#33CCBB>➤ <white>/npwadmin setowner <warp> <player> <#DDDDDD>| <#BBFFDD>Set owner of warp"
-  - " <#33CCBB>➤ <white>/npwadmin converter <#DDDDDD>| <#BBFFDD>Convert data from another plugin"
+  - "<gradient:#33EEBB:#3388BB><b>Natural PlayerWarps</b></gradient> <#3388BB>Admin Help"
+  - " <#3388BB>➤ <white>/npwadmin reload <#DDDDDD>| <#33EEBB>Reload plugin"
+  - " <#3388BB>➤ <white>/npwadmin delete <warp> <#DDDDDD>| <#33EEBB>Delete warp"
+  - " <#3388BB>➤ <white>/npwadmin setowner <warp> <player> <#DDDDDD>| <#33EEBB>Set owner of warp"
+  - " <#3388BB>➤ <white>/npwadmin converter <#DDDDDD>| <#33EEBB>Convert data from another plugin"
   - " "
 
 access:
@@ -39,75 +39,75 @@ placeholders:
   warp-not-found: "Warp not found"
 
 info:
-  - "&#BBFFDD===== &#33EEBB&l%name% &#BBFFDD====="
+  - "&#33EEBB===== &#3388BB&l%name% &#33EEBB====="
   - " "
-  - " &#33EEBBDescription:"
+  - " &#3388BBDescription:"
   - " &#444444❙ &f%description%"
   - " "
-  - " &#33EEBBInformation"
-  - "   &#444444❙ &#BBFFDDOwner: &f%owner%"
-  - "   &#444444❙ &#BBFFDDCreated: &f%created%"
-  - "   &#444444❙ &#BBFFDDLocation: &f%world%, %x%, %y%, %z%"
-  - "   &#444444❙ &#BBFFDDCategory: &f%category%"
+  - " &#3388BBInformation"
+  - "   &#444444❙ &#33EEBBOwner: &f%owner%"
+  - "   &#444444❙ &#33EEBBCreated: &f%created%"
+  - "   &#444444❙ &#33EEBBLocation: &f%world%, %x%, %y%, %z%"
+  - "   &#444444❙ &#33EEBBCategory: &f%category%"
   - " "
-  - " &#33EEBBStatistics"
-  - "   &#444444❙ &#BBFFDDVisits: &f%visitors_unique%"
-  - "   &#444444❙ &#BBFFDDRating: &#FFDD00%rating_stars%"
-  - "   &#444444❙ &#BBFFDDFavorite of: &f%favorites% players"
+  - " &#3388BBStatistics"
+  - "   &#444444❙ &#33EEBBVisits: &f%visitors_unique%"
+  - "   &#444444❙ &#33EEBBRating: &#FFDD00%rating_stars%"
+  - "   &#444444❙ &#33EEBBFavorite of: &f%favorites% players"
   - " "
-  - " &#33EEBBCost of teleporting: &#BBFFDD%price%"
-  - " &#33EEBBAccess: &#BBFFDD%access%"
+  - " &#3388BBCost of teleporting: &#33EEBB%price%"
+  - " &#3388BBAccess: &#33EEBB%access%"
   - " "
-  - "&#BBFFDD===== &#33EEBB&l%name% &#BBFFDD====="
+  - "&#33EEBB===== &#3388BB&l%name% &#33EEBB====="
 
 create:
-  created: "&#BBFFDDYou have successfully created the &#33EEBB%warp% &#BBFFDDwarp!"
-  confirm: "&#BBFFDDCreating a warp will cost you &#33EEBB%price%&#BBFFDD! If you still want to create the warp, type this command again!"
+  created: "&#33EEBBYou have successfully created the &#3388BB%warp% &#33EEBBwarp!"
+  confirm: "&#33EEBBCreating a warp will cost you &#3388BB%price%&#33EEBB! If you still want to create the warp, type this command again!"
 
 whitelist:
-  clear: "&#BBFFDDYou have removed all players from the whitelist!"
-  remove: "&#BBFFDDYou have removed &#33EEBB%player% &#BBFFDDfrom the whitelist!"
-  add: "&#BBFFDDYou have added &#33EEBB%player% &#BBFFDDto the whitelist!"
+  clear: "&#33EEBBYou have removed all players from the whitelist!"
+  remove: "&#33EEBBYou have removed &#3388BB%player% &#33EEBBfrom the whitelist!"
+  add: "&#33EEBBYou have added &#3388BB%player% &#33EEBBto the whitelist!"
 
 blacklist:
-  clear: "&#BBFFDDYou have removed all players from the blacklist!"
-  remove: "&#BBFFDDYou have removed &#33EEBB%player% &#BBFFDDfrom the blacklist!"
-  add: "&#BBFFDDYou have added &#33EEBB%player% &#BBFFDDto the blacklist!"
+  clear: "&#33EEBBYou have removed all players from the blacklist!"
+  remove: "&#33EEBBYou have removed &#3388BB%player% &#33EEBBfrom the blacklist!"
+  add: "&#33EEBBYou have added &#3388BB%player% &#33EEBBto the blacklist!"
 
 search:
-  show: "&#BBFFDDShowing search results for &#33EEBB%search%&#BBFFDD!"
-  reset: "&#BBFFDDDisabled search!"
+  show: "&#33EEBBShowing search results for &#3388BB%search%&#33EEBB!"
+  reset: "&#33EEBBDisabled search!"
 
 rate:
-  add: "&#BBFFDDYou have added a &#33EEBB%rating% &#BBFFDDstar review to this warp!"
-  remove: "&#BBFFDDYou have removed your rating of this warp!"
+  add: "&#33EEBBYou have added a &#3388BB%rating% &#33EEBBstar review to this warp!"
+  remove: "&#33EEBBYou have removed your rating of this warp!"
 
 favorite:
-  add: "&#BBFFDDYou have added the warp to your favorites!"
-  remove: "&#BBFFDDYou have removed this warp from your favorites!"
+  add: "&#33EEBBYou have added the warp to your favorites!"
+  remove: "&#33EEBBYou have removed this warp from your favorites!"
 
 editor:
-  update-location: "&#BBFFDDYou have changed the warp's location!"
-  update-name: "&#BBFFDDYou have changed the warp's name!"
-  update-icon: "&#BBFFDDYou have changed the warp's icon!"
-  remove-icon: "&#BBFFDDYou have removed the warp's icon!"
-  transferred: "&#BBFFDDYou have transferred the warp's ownership to &#33EEBB%player%&#BBFFDD!"
-  new-owner: "&#33EEBB%player% &#BBFFDDhas transferred the ownership of the &#33EEBB%warp% &#BBFFDDwarp to you!"
+  update-location: "&#33EEBBYou have changed the warp's location!"
+  update-name: "&#33EEBBYou have changed the warp's name!"
+  update-icon: "&#33EEBBYou have changed the warp's icon!"
+  remove-icon: "&#33EEBBYou have removed the warp's icon!"
+  transferred: "&#33EEBBYou have transferred the warp's ownership to &#3388BB%player%&#33EEBB!"
+  new-owner: "&#3388BB%player% &#33EEBBhas transferred the ownership of the &#3388BB%warp% &#33EEBBwarp to you!"
 
 delete:
-  deleted: "&#BBFFDDYou have deleted the &#33EEBB%warp% &#BBFFDDwarp!"
+  deleted: "&#33EEBBYou have deleted the &#3388BB%warp% &#33EEBBwarp!"
 
 teleport:
-  success: "&#BBFFDDYou have successfully teleported to the &#33EEBB%warp% &#BBFFDDwarp!"
-  in: "&#BBFFDDYou will be teleported in &#33EEBB%seconds% &#BBFFDDseconds! Do not move!"
+  success: "&#33EEBBYou have successfully teleported to the &#3388BB%warp% &#33EEBBwarp!"
+  in: "&#33EEBBYou will be teleported in &#3388BB%seconds% &#33EEBBseconds! Do not move!"
 
 confirm:
-  unsafe: "&#BBFFDDThe &#33EEBB%warp% &#BBFFDDwarp is &#FF0000&nnot safe&#BBFFDD! Warp again to confirm if you still want to teleport!"
-  paid: "&#BBFFDDTeleporting to the &#33EEBB%warp% &#BBFFDDwarp is going to cost &#33EEBB%price%&#BBFFDD! Warp again to confirm if you still want to teleport!"
+  unsafe: "&#33EEBBThe &#3388BB%warp% &#33EEBBwarp is &#FF0000&nnot safe&#33EEBB! Warp again to confirm if you still want to teleport!"
+  paid: "&#33EEBBTeleporting to the &#3388BB%warp% &#33EEBBwarp is going to cost &#3388BB%price%&#33EEBB! Warp again to confirm if you still want to teleport!"
 
 money:
-  take: "&#33EEBB%price% &#BBFFDDwas removed from your balance!"
-  got: "&#BBFFDDYou have withdrawn &#33EEBB%price% &#BBFFDDfrom the warp's bank!"
+  take: "&#3388BB%price% &#33EEBBwas removed from your balance!"
+  got: "&#33EEBBYou have withdrawn &#3388BB%price% &#33EEBBfrom the warp's bank!"
 
 admin:
   deleted: "&#FF4444You have deleted the &#FF0000%warp% &#FF4444warp!"

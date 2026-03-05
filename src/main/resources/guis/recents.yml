@@ -14,28 +14,28 @@ auto-update-ticks: -1
 # ----- ITEMS -----
 
 warp:
-  name: "&#33EEBB&l%name%"
+  name: "&#3388BB&l%name%"
   lore:
     - " "
-    - "&#33EEBBDescription:"
+    - "&#3388BBDescription:"
     - "&#444444❙ &f%description%"
     - " "
-    - "&#33EEBBInformation"
-    - "  &#444444❙ &#BBFFDDOwner: &f%owner%"
-    - "  &#444444❙ &#BBFFDDCreated: &f%created%"
-    - "  &#444444❙ &#BBFFDDLocation: &f%world%, %x%, %y%, %z%"
-    - "  &#444444❙ &#BBFFDDCategory: &f%category%"
+    - "&#3388BBInformation"
+    - "  &#444444❙ &#33EEBBOwner: &f%owner%"
+    - "  &#444444❙ &#33EEBBCreated: &f%created%"
+    - "  &#444444❙ &#33EEBBLocation: &f%world%, %x%, %y%, %z%"
+    - "  &#444444❙ &#33EEBBCategory: &f%category%"
     - " "
-    - "&#33EEBBStatistics"
-    - "  &#444444❙ &#BBFFDDVisits: &f%visitors_unique%"
-    - "  &#444444❙ &#BBFFDDRating: &#FFDD00%rating_stars%"
-    - "  &#444444❙ &#BBFFDDFavorite of: &f%favorites% players"
+    - "&#3388BBStatistics"
+    - "  &#444444❙ &#33EEBBVisits: &f%visitors_unique%"
+    - "  &#444444❙ &#33EEBBRating: &#FFDD00%rating_stars%"
+    - "  &#444444❙ &#33EEBBFavorite of: &f%favorites% players"
     - " "
-    - "&#33EEBBCost of teleporting: &#BBFFDD%price%"
-    - "&#33EEBBAccess: &#BBFFDD%access%"
+    - "&#3388BBCost of teleporting: &#33EEBB%price%"
+    - "&#3388BBAccess: &#33EEBB%access%"
     - " "
-    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDTeleport"
-    - "&#33EEBB&lRight Click &#DDDDDD» &#BBFFDDReview & Options"
+    - "&#3388BB&lLeft Click &#DDDDDD» &#33EEBBTeleport"
+    - "&#3388BB&lRight Click &#DDDDDD» &#33EEBBReview & Options"
 
 # you can add as many decorations as you wish
 filler:
@@ -49,14 +49,14 @@ filler:
 
 back:
   slot: 4
-  name: "&#33EEBB&lʙᴀᴄᴋ"
+  name: "&#3388BB&lʙᴀᴄᴋ"
   type: BARRIER
   lore:
     - " "
     - " &fClick here to go back"
     - " &fto the previous menu!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDBack to the Main Menu"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBBack to the Main Menu"
   actions:
     - "[BACK]"
     - "[SOUND] ui.button.click|1|1"
@@ -64,13 +64,13 @@ back:
 previous-page:
   slot: 39
   material: "ARROW"
-  name: "&#33EEBB&lᴘʀᴇᴠɪᴏᴜs ᴘᴀɢᴇ"
+  name: "&#3388BB&lᴘʀᴇᴠɪᴏᴜs ᴘᴀɢᴇ"
   lore:
     - " "
     - " &fClick here to go back"
     - " &fto the previous page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDPrevious Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBPrevious Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[PAGE] previous"
@@ -78,13 +78,13 @@ previous-page:
 refresh:
   slot: 40
   material: "SUNFLOWER"
-  name: "&#33EEBB&lʀᴇғʀᴇsʜ"
+  name: "&#3388BB&lʀᴇғʀᴇsʜ"
   lore:
     - " "
     - " &fClick here to"
     - " &frefresh the page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDRefresh Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBRefresh Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[REFRESH]"
@@ -92,13 +92,13 @@ refresh:
 next-page:
   slot: 41
   material: "ARROW"
-  name: "&#33EEBB&lɴᴇxᴛ ᴘᴀɢᴇ"
+  name: "&#3388BB&lɴᴇxᴛ ᴘᴀɢᴇ"
   lore:
     - " "
     - " &fClick here to go"
     - " &fto the next page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDNext Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBNext Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[PAGE] next"

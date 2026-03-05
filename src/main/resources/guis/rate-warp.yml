@@ -24,68 +24,68 @@ filler:
 rate:
   slot: 20
   # this font is called 'small caps'
-  name: "&#33EEBB&lʀᴀᴛᴇ ᴡᴀʀᴘ"
+  name: "&#3388BB&lʀᴀᴛᴇ ᴡᴀʀᴘ"
   type: GOLDEN_APPLE
   lore:
     - " "
-    - "&#33EEBBInformation"
-    - "  &#444444❙ &#BBFFDDRating: &#FFDD00%rating_stars% &#FFAA00%rating_decimal%"
+    - "&#3388BBInformation"
+    - "  &#444444❙ &#33EEBBRating: &#FFDD00%rating_stars% &#FFAA00%rating_decimal%"
     - " "
-    - "&#33EEBBYour current rating: &#FFDD00%given_rating_stars% &#FFAA00%given_rating_decimal%"
+    - "&#3388BBYour current rating: &#FFDD00%given_rating_stars% &#FFAA00%given_rating_decimal%"
     - " "
-    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDRate Warp"
-    - "&#33EEBB&lRight Click &#DDDDDD» &#BBFFDDDelete Your Rating"
+    - "&#3388BB&lLeft Click &#DDDDDD» &#33EEBBRate Warp"
+    - "&#3388BB&lRight Click &#DDDDDD» &#33EEBBDelete Your Rating"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 teleport:
   slot: 22
-  name: "&#33EEBB&lᴛᴇʟᴇᴘᴏʀᴛ"
+  name: "&#3388BB&lᴛᴇʟᴇᴘᴏʀᴛ"
   type: ENDER_PEARL
   lore:
     - " "
-    - "&#33EEBBInformation"
-    - "  &#444444❙ &#BBFFDDLocation: &f%world%, %x%, %y%, %z%"
+    - "&#3388BBInformation"
+    - "  &#444444❙ &#33EEBBLocation: &f%world%, %x%, %y%, %z%"
     - " "
-    - "&#33EEBBCost of teleporting: &#BBFFDD%price%"
-    - "&#33EEBBAccess: &#BBFFDD%access%"
+    - "&#3388BBCost of teleporting: &#33EEBB%price%"
+    - "&#3388BBAccess: &#33EEBB%access%"
     - " "
-    - "&#33EEBB&lLeft Click &#DDDDDD» &#BBFFDDTeleport"
+    - "&#3388BB&lLeft Click &#DDDDDD» &#33EEBBTeleport"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 favorite:
   slot: 24
   not-favorite:
-    name: "&#33EEBB&lᴀᴅᴅ ᴛᴏ ғᴀᴠᴏʀɪᴛᴇs"
+    name: "&#3388BB&lᴀᴅᴅ ᴛᴏ ғᴀᴠᴏʀɪᴛᴇs"
     type: BELL
     lore:
       - " "
-      - "&#33EEBBIs it in your favorites? &#BBFFDDNo"
+      - "&#3388BBIs it in your favorites? &#33EEBBNo"
       - " "
-      - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDAdd to Favorites"
+      - "&#3388BB&lClick &#DDDDDD» &#33EEBBAdd to Favorites"
   favorite:
-    name: "&#33EEBB&lʀᴇᴍᴏᴠᴇ ғʀᴏᴍ ғᴀᴠᴏʀɪᴛᴇs"
+    name: "&#3388BB&lʀᴇᴍᴏᴠᴇ ғʀᴏᴍ ғᴀᴠᴏʀɪᴛᴇs"
     type: BELL
     glow: true
     lore:
       - " "
-      - "&#33EEBBIs it in your favorites? &#BBFFDDYes"
+      - "&#3388BBIs it in your favorites? &#33EEBBYes"
       - " "
-      - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDRemove from Favorites"
+      - "&#3388BB&lClick &#DDDDDD» &#33EEBBRemove from Favorites"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 back:
   slot: 40
-  name: "&#33EEBB&lʙᴀᴄᴋ"
+  name: "&#3388BB&lʙᴀᴄᴋ"
   type: BARRIER
   lore:
     - " "
     - " &fClick here to go back"
     - " &fto the previous menu!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDBack to the Main Menu"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBBack to the Main Menu"
   actions:
     - "[BACK]"
     - "[SOUND] ui.button.click|1|1"

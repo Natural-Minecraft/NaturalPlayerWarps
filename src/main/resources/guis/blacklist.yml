@@ -15,13 +15,13 @@ auto-update-ticks: -1
 
 blacklisted:
   material: BLACK_CANDLE
-  name: "&#33EEBB&l%player%"
+  name: "&#3388BB&l%player%"
   lore:
     - "&#AAAAAAThis player is blacklisted!"
     - " "
-    - "&#33EEBBSince: &#BBFFDD%added-date%"
+    - "&#3388BBSince: &#33EEBB%added-date%"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDRemove From Blacklist"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBRemove From Blacklist"
 
 # you can add as many decorations as you wish
 filler:
@@ -36,27 +36,27 @@ filler:
 add:
   slot: 0
   # this font is called 'small caps'
-  name: "&#33EEBB&lʙʟᴀᴄᴋʟɪsᴛ ᴘʟᴀʏᴇʀ"
+  name: "&#3388BB&lʙʟᴀᴄᴋʟɪsᴛ ᴘʟᴀʏᴇʀ"
   type: NAME_TAG
   lore:
     - "&#AAAAAABlacklisted players can"
     - "&#AAAAAAnever use your warp!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDAdd Player to Blacklist"
-    - "&#33EEBB&lShift + Right Click &#DDDDDD» &#BBFFDDClear Blacklist"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBAdd Player to Blacklist"
+    - "&#3388BB&lShift + Right Click &#DDDDDD» &#33EEBBClear Blacklist"
   actions:
     - "[SOUND] ui.button.click|1|1"
 
 back:
   slot: 8
-  name: "&#33EEBB&lʙᴀᴄᴋ"
+  name: "&#3388BB&lʙᴀᴄᴋ"
   type: BARRIER
   lore:
     - " "
     - " &fClick here to go back"
     - " &fto the previous menu!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDBack to the Main Menu"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBBack to the Main Menu"
   actions:
     - "[BACK]"
     - "[SOUND] ui.button.click|1|1"
@@ -64,13 +64,13 @@ back:
 previous-page:
   slot: 39
   material: "ARROW"
-  name: "&#33EEBB&lᴘʀᴇᴠɪᴏᴜs ᴘᴀɢᴇ"
+  name: "&#3388BB&lᴘʀᴇᴠɪᴏᴜs ᴘᴀɢᴇ"
   lore:
     - " "
     - " &fClick here to go back"
     - " &fto the previous page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDPrevious Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBPrevious Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[PAGE] previous"
@@ -78,13 +78,13 @@ previous-page:
 refresh:
   slot: 40
   material: "SUNFLOWER"
-  name: "&#33EEBB&lʀᴇғʀᴇsʜ"
+  name: "&#3388BB&lʀᴇғʀᴇsʜ"
   lore:
     - " "
     - " &fClick here to"
     - " &frefresh the page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDRefresh Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBRefresh Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[REFRESH]"
@@ -92,13 +92,13 @@ refresh:
 next-page:
   slot: 41
   material: "ARROW"
-  name: "&#33EEBB&lɴᴇxᴛ ᴘᴀɢᴇ"
+  name: "&#3388BB&lɴᴇxᴛ ᴘᴀɢᴇ"
   lore:
     - " "
     - " &fClick here to go"
     - " &fto the next page!"
     - " "
-    - "&#33EEBB&lClick &#DDDDDD» &#BBFFDDNext Page"
+    - "&#3388BB&lClick &#DDDDDD» &#33EEBBNext Page"
   actions:
     - "[SOUND] ui.button.click|1|1"
     - "[PAGE] next"
